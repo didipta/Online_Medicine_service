@@ -13,5 +13,9 @@ namespace Online_Medicine_service.Controllers
         {
             return View();
         }
+        public ActionResult Singinpage()
+        {
+            return View();
+        }
     }
 }

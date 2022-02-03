@@ -24,7 +24,7 @@ namespace Online_Medicine_service
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/index.css",
+                      "~/Content/indexp.css",
                       "~/Content/site.css"));
         }
     }

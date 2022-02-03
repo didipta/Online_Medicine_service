@@ -132,7 +132,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\index.css" />
+    <Content Include="Content\indexp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -167,6 +167,7 @@
     <Content Include="Views\Shared\_Userlayout.cshtml" />
     <Content Include="Views\Shared\_indexlayout.cshtml" />
     <Content Include="Views\index\Indexpage.cshtml" />
+    <Content Include="Views\index\Singinpage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

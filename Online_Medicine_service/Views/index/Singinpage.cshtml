@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Singinpage";
+    Layout = "~/Views/Shared/_indexlayout.cshtml";
+}
+
+
+<div class="signin-title">
+    <h1>WELCOME BACK :)</h1>
+    <p>
+        To keep connected with us please login with your personal
+        information by user-name and password.
+    </p>
+
+    <form action="sliderpage.html" class="sign-in-form" method="POST">
+        <div class="input-field">
+            <i class="fas fa-user-alt"></i>
+            <input type="text" name="uname" id="uname" placeholder="user name" required />
+        </div>
+        <div class="input-field">
+            <i class="fas fa-key"></i>
+            <input type="password" name="password" id="password" placeholder="password" required />
+
+            <div class="eye" onclick=" password() "><i class="fa fa-eye" aria-hidden="true" id="eye"></i></div>
+
+        </div>
+        <a href="#" style="margin-left: 10px; font-size: 1.2rem; color: rgb(243, 243, 243);">Forgotten password?</a><br>
+        <input type="submit" value="Sign In" class="btn">
+    </form>
+</div>
+
