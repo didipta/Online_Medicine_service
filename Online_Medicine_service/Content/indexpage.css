@@ -4,24 +4,51 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    text-decoration: none;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    user-select: none;
+    
 }
 
 body {
     margin: 0;
 }
+#preloader {
+    background: #486485 url(https://cdn.dribbble.com/users/1215152/screenshots/4525615/refill_medicine_loader.gif) no-repeat center center;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    margin: 10px;
+    position: absolute;
+    z-index: 100;
+}
 
+    .logo span {
+        text-transform: uppercase;
+        margin-left: 5px;
+        letter-spacing: 4px;
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: rgb(2, 22, 77);
+        font-family: 'Yellowtail', cursive;
+    }
+    .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: deeppink;
+    }
 .index_body {
     width: 100%;
     height: 100vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
 }
 
 .index_nav {
@@ -136,7 +163,7 @@ body {
 .sign-body {
     width: 100%;
     height: 100vh;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjEREZKolI7OFDQn4_u80tvZBbLyureE-v_w&usqp=CAU");
+    background-image: url("https://st3.depositphotos.com/16045090/35833/i/450/depositphotos_358333256-stock-photo-medical-concept-blue-background-stethoscope.jpg");
     background-size: cover;
 }
 .signin-title {
@@ -267,3 +294,18 @@ body {
     transition: 0.5s;
     font-size: 1.5rem;
 }
+.sign-up-text {
+    margin: 10px;
+    background-color: rgba(111, 142, 228, 0.404);
+    padding: 10px;
+}
+    .sign-up-text h5 {
+        margin:10px;
+        font-weight: 900;
+        color: #232223;
+    }
+    .sign-up-text p a {
+        font-weight:900;
+        color: #0042F9;
+        font-size:1.2rem;
+    }
