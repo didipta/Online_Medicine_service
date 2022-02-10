@@ -7,6 +7,7 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    text-decoration:none;
     
 }
 
@@ -23,26 +24,34 @@ body {
     z-index: 1000;
 }
 .logo {
-    margin: 10px;
-    position: absolute;
-    z-index: 100;
+    width:150px;
+    display: flex;
+    margin: 15px;
+    margin-left: 25px;
+    position:absolute;
 }
 
-    .logo span {
-        text-transform: uppercase;
-        margin-left: 5px;
-        letter-spacing: 4px;
-        font-size: 1.7rem;
-        font-weight: 900;
-        color: rgb(2, 22, 77);
-        font-family: 'Yellowtail', cursive;
-    }
     .logo img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: deeppink;
-    }
+    width: 35px;
+    height: 35px;
+    border-radius:50%;
+    background-color:deeppink;
+    
+}
+
+.logo span {
+    font-size: 1.1rem;
+    color: rgb(255, 0, 119);
+}
+
+    .logo h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: rgb(87, 87, 87);
+    margin-top: 5px;
+    margin-left:10px;
+}
 .index_body {
     width: 100%;
     height: 100vh;
@@ -55,33 +64,33 @@ body {
     position: relative;
 }
 
-    .index_nav ul {
-        text-align: center;
-        margin-left: 45%;
-        margin-top: 8px;
+.index_nav ul {
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 8px;
+}
+
+    .index_nav ul li {
+        width: 100px;
+        display: inline-block;
+        margin: 15px;
+        margin-left: 35px;
+        padding: 10px;
     }
 
-        .index_nav ul li {
-            width: 100px;
-            display: inline-block;
-            margin: 15px;
-            margin-left: 35px;
-            padding: 10px;
+        .index_nav ul li:hover {
+            background-color: rgba(68, 65, 66, 0.185);
+            border: 1px solid rgba(68, 65, 66, 0.185);
+            border-radius: 3px;
+            color: rgb(240, 240, 240);
         }
 
-            .index_nav ul li:hover {
-                background-color: rgba(68, 65, 66, 0.185);
-                border: 1px solid rgba(68, 65, 66, 0.185);
-                border-radius: 3px;
-                color: rgb(240, 240, 240);
-            }
-
-            .index_nav ul li a {
-                color: rgb(31, 31, 31);
-                font-weight: 900;
-                font-size: 1.5rem;
-                text-decoration: none;
-            }
+        .index_nav ul li a {
+            color: rgb(31, 31, 31);
+            font-weight: 900;
+            font-size: 1rem;
+            text-decoration: none;
+        }
 
 .index_body_contain {
     width: 100%;
@@ -103,7 +112,7 @@ body {
     .heading_title h3 {
         margin:20px;
         margin-top:40px;
-        font-size: 3rem;
+        font-size: 1.8rem;
         letter-spacing: 2px;
         font-family: 'Yellowtail', cursive;
     }
@@ -111,7 +120,7 @@ body {
            
     margin:20px;
     font-weight:900;
-    font-size:1.5rem;
+    font-size:1rem;
     letter-spacing:5px;
         
 }
@@ -121,6 +130,7 @@ body {
         letter-spacing: 1px;
         text-justify: inter-word;
         text-align: initial;
+        font-size: 0.8rem;
     }
 .index_button {
     width: 200px;
@@ -130,7 +140,7 @@ body {
     border: 2px solid rgb(255, 0, 98);
     background-color: rgb(236, 14, 88);
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 2px;
     color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -155,7 +165,7 @@ body {
     margin:10px;
 }
     .socail_media_app i {
-        font-size: 3rem;
+        font-size: 1.8rem;
         margin: 20px;
         color: rgb(58, 57, 57);
        
@@ -163,7 +173,7 @@ body {
 .sign-body {
     width: 100%;
     height: 100vh;
-    background-image: url("https://st3.depositphotos.com/16045090/35833/i/450/depositphotos_358333256-stock-photo-medical-concept-blue-background-stethoscope.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/20/35/EUiOoT.jpg");
     background-size: cover;
 }
 .signin-title {
@@ -184,14 +194,14 @@ body {
         font-family: 'Segoe Print';
         color: rgb(243, 243, 243);
         margin: 10px;
-        font-size: 2.2rem;
+        font-size: 1.5rem;
         letter-spacing: 2px;
     }
 
     .signin-title p {
         width: 350px;
         margin: 10px;
-        font-size: 1.2rem;
+        font-size: .8rem;
         color: rgb(243, 243, 243);
     }
 
@@ -203,8 +213,8 @@ body {
     max-width: 380px;
     width: 100%;
     background-color: #dedfe2;
-    margin: 10px 0;
-    margin-top: 20px;
+    margin: 15px 0;
+    margin-top: 25px;
     height: 55px;
     border-radius: 20px;
     display: grid;
@@ -213,13 +223,16 @@ body {
     position: relative;
     overflow: hidden;
 }
+    .input-field:hover {
+        box-shadow: 2px 3px 2px 2px rgba(126, 224, 81, 0.61);
+    }
 
     .input-field i {
         text-align: center;
         line-height: 55px;
         color: #525252;
         transition: 0.5s;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .input-field input {
@@ -228,12 +241,12 @@ body {
         border: none;
         line-height: 2;
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         color: #333;
     }
 
         .input-field input::placeholder {
-            font-size:1.3rem;
+            font-size:.9rem;
             color: rgb(146, 145, 145);
             font-weight: 500;
             letter-spacing:1px;
@@ -241,7 +254,7 @@ body {
 
 .social-text {
     padding: 0.8rem 0;
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 900;
 }
 
@@ -258,7 +271,7 @@ body {
     color: rgb(225, 0, 255);
     border-radius: 50%;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: 900;
     box-shadow: inset 0 0 0 0 rgb(255, 255, 255);
     transition: 0.3s;
@@ -292,7 +305,7 @@ body {
     margin: 10px 10px;
     cursor: pointer;
     transition: 0.5s;
-    font-size: 1.5rem;
+    font-size: .9rem;
 }
 .sign-up-text {
     margin: 10px;
@@ -306,6 +319,78 @@ body {
     }
     .sign-up-text p a {
         font-weight:900;
-        color: #0042F9;
-        font-size:1.2rem;
+        color: darkblue;
+        font-size:.8rem;
     }
+ .regis-title {
+    position:relative;
+    
+}
+
+    .regis-title h1 {
+        width: 200px;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        letter-spacing:2px;
+        color: rgb(252, 33, 117);
+    }
+
+  .regis-title .title-line {
+        content: "";
+        width: 90px;
+        height: 4px;
+        background-color: #593cfd;
+        border-radius: 10px;
+    }
+
+     .regis-title h3 {
+        width: 350px;
+        font-weight:600;
+        font-size: .9rem;
+        margin-top: 10px;
+        color: rgb(14, 14, 36);
+    }
+
+    .regis-title p {
+        width: 350px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-top: 5px;
+        color: rgb(82, 82, 82);
+    }
+
+.sign-up-form {
+    display: flex;
+}
+
+.sign-up {
+    margin: 20px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    padding: 50px;
+    background-color: rgba(233, 16, 179, 0.384);
+    border-radius: 10px;
+    box-shadow: 10px 12px 15px 12px rgba(14, 76, 245, 0.404);
+}
+.checkbox-form {
+    width: 400px;
+    margin-left: 20px;
+    font-size: .9rem;
+    color: rgb(110, 110, 110);
+    font-weight: bolder;
+}
+
+    .checkbox-form input {
+        height: 15px;
+        outline: none;
+        color: rgb(145, 145, 145);
+        margin-top: 2px;
+    }
+.singintext {
+    font-size: .9rem;
+    margin: 10px;
+    font-weight: 900;
+    color: rgb(110, 110, 110);
+}

@@ -19,7 +19,8 @@
     
     <a href="/index/indexpage">
         <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/2833/2833228.png" /><span>Med<span style="color:deeppink;">life</span></span>
+            <img src="https://cdn-icons-png.flaticon.com/512/2833/2833228.png" />
+            <h3>Med<span style="color:deeppink;">life</span></h2>
         </div>
     </a>
     <div class="containers">
@@ -30,6 +31,35 @@
         $(window).on("load", function () {
             $('#preloader').fadeOut(7000);
         });
+        function password() {
+
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+                document.getElementById('eye').style.color = "rgba(116, 116, 116, 0.781)";
+
+
+            }
+            else {
+                x.type = "password";
+                document.getElementById('eye').style.color = "rgba(43, 43, 43, 0.781)";
+            }
+        }
+
+        function cpassword() {
+
+            var y = document.getElementById("cpassword");
+            if (y.type === "password") {
+                y.type = "text";
+                document.getElementById('ceye').style.color = "rgba(116, 116, 116, 0.781)";
+
+
+            }
+            else {
+                y.type = "password";
+                document.getElementById('ceye').style.color = "rgba(43, 43, 43, 0.781)";
+            }
+        }
     </script>
 </body>
 </html>

@@ -4,14 +4,39 @@
 }
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_Userlayout</title>
+    <title>@ViewBag.Title -Online Medicine service</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2833/2833228.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/067dbad983.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="container">
+<body class="user-body">
+    <section id="header">
+        <div class="Top-header">
+            <li class="Top-header-title-1">
+                <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=GTvVlcSPFdLTrfgDClDqDZSzvbPXKkjGrFcRBfFlCxMPhlvsNwZWwTKVzPRNhwqFCVjCKwNVzWKMS" target="_blank"><i class="fas fa-envelope"></i> Companysd@gmail.com</a>
+                <a href="tel:01881291010"> <i class="fas fa-phone-alt"></i> 01881291010</a>
+            </li>
+            <li class="Top-header-title-2">
+                <a href="#">All Services</a>
+                <a href="/index/Singinpage"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="#"><i class="far fa-bell"></i></a>
+            </li>
+        </div>
+    </section>
+    <div class="user-container">
         @RenderBody()
     </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

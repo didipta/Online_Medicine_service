@@ -20,12 +20,12 @@ namespace Online_Medicine_service
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                     
+                      "~/Scripts/stylejs.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
                       "~/Content/indexpage.css",
-                      "~/Content/site.css"));
+                      "~/Content/homepage.css"));
         }
     }
 }
