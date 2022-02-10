@@ -194,9 +194,6 @@ input::placeholder {
         overflow: hidden;
         position: fixed;
         z-index: 1000;
-        border: 1px solid rgba(107, 107, 107, 0.596);
-        border-block-end: none;
-        border-block-start: none;
         box-shadow: 0px 2px 5px 0px rgba(25, 25, 25, 0.26);
     }
 .Catagories
@@ -217,7 +214,8 @@ input::placeholder {
         .home-mid-contain .CATAGORIES-nav a, .CATAGORIES-nav a {
             color: black;
             padding: 5px;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
+            font-weight:800;
             
         }
 .img-slider {
@@ -403,3 +401,79 @@ input::placeholder {
         font-size:.9rem;
 
     }
+.footer
+{
+    width:75%;
+    position:relative;
+    top:19vw;
+    left:22vw;
+    background-color:floralwhite;
+}
+.emergency {
+    width: 100%;
+    height:120px;
+    background-color: rgba(206, 45, 125, 0.979);
+    overflow:hidden;
+    padding:30px;
+    padding-left:60px;
+    text-align:center;
+    border-radius:4px;
+
+}
+.emergency img {
+    width: 270px;
+    height: 270px;
+    position:absolute;
+    left:57vw;
+    top:-9.8vw;
+}
+.emergency-title h5
+{
+   
+    font-size:1.1rem;
+    color:white;
+}
+.emergency-title button
+{
+    width:130px;
+    height:35px;
+    text-align:center;
+    font-size:.9rem;
+    outline:none;
+    border:none;
+    border-radius:5px;
+    margin:10px;
+    color:deeppink;
+    font-weight:900;
+    cursor:pointer;
+}
+.footer-info
+{
+   width:100%;
+   height:300px;
+   background-color:aliceblue;
+   display:flex;
+
+}
+.item {
+    width: 200px;
+    margin: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+    .item p {
+        margin: 10px;
+        font-size: 0.9rem;
+    }
+    .item h4 {
+        font-size: 1.1rem;
+        margin: 10px;
+        margin-bottom: 20px;
+    }
+
+.copy-write
+{
+    text-align:center;
+    padding:10px;
+    font-size:0.8rem;
+}
