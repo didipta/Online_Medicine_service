@@ -13,5 +13,10 @@ namespace Online_Medicine_service.Controllers
         {
             return View();
         }
+
+        public ActionResult Addtocart()
+        {
+            return View();
+        }
     }
 }

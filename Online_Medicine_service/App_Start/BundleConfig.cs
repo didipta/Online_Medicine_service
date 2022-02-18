@@ -21,11 +21,15 @@ namespace Online_Medicine_service
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                      
-                      "~/Scripts/stylejs.js"));
+                      "~/Scripts/stylejs.js",
+                      "~/Scripts/jquery.nice-number.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/indexpage.css",
                       "~/Content/productpage.css",
+                      "~/Content/jquery.nice-number.css",
+                      "~/Content/addtocart.css",
                       "~/Content/homepage.css"));
         }
     }

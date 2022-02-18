@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Poppins:wght@300&family=Shippori+Antique&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration:none;
+    
+}
+.add-to-cart
+{
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    top: 5vw;
+    left: 5vw;
+    
+    overflow: hidden;
+}
+.cart-product
+{
+    width:83%;
+    display: flex;
+    margin: 10px;
+    position: relative;
+    left: 5vw;
+    box-shadow: 3px 3px 4px 2px rgba(187, 187, 187, 0.349);
+    border-radius: 5px;
+
+}
+.product-img
+{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(202, 202, 202, 0.534);
+    text-align: center;
+    padding-top: 10px;
+    overflow: hidden;
+    margin:10px ;
+}
+.product-img img
+{
+    width: 250px;
+    height: 250px;
+}
+.product-img img:hover
+{
+    transform: scale(1.1);
+	transition:2s transform;
+}
+.cart-deteils
+{
+    width: 500px;
+    padding: 10px;
+    overflow: hidden;
+}
+.cart-title
+{
+    margin: 10px;
+}
+.cart-title h3
+{
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin: 5px;
+    color: rgb(34, 34, 34);
+}
+.cart-title p
+{
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin: 5px;
+    color: rgb(34, 34, 34);
+}
+.price
+{
+    margin: 20px;
+    font-size: 1rem;
+    color: rgb(224, 109, 63);
+}
+.input input
+{
+    width: 50px;
+    height: 30px;
+    background-color: #eaf6fa;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-weight: 900;
+    
+    
+    
+}
+.input
+{
+    display:flex;
+    margin: 20px;
+    
+}
+.input p{
+    margin: 10px;
+    font-size: 0.8rem;
+    
+    
+}
+.input button
+{
+    background-color: rgba(238, 238, 238, 0.61);
+    border: none;
+    width: 40px;
+    height: 40px;
+    display:inline;
+    font-weight: 900;
+    font-size: 1.3rem;
+    outline: none;
+    border-radius: 2px;
+    
+   
+    
+}
+.cart-button button
+{
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.cart-button button:hover
+{
+    opacity: 0.8;
+}
+.review-rating
+{
+    width:83%;
+    margin: 10px;
+    position: relative;
+    left: 5vw;
+    box-shadow: 3px 3px 4px 2px rgba(187, 187, 187, 0.349);
+    border-radius: 5px;
+
+}
+.delivery-status
+{
+    background-color: #f3f3f3;
+    margin: 10px;
+    padding: 10px;
+}
+.delivery h6{
+    margin: 10px;
+    font-size: 0.9rem;
+}
+.delivery p
+{
+    margin: 15px;
+    font-size: 0.8rem;
+}
+.title-r-r
+{
+    width: 100%;
+    background-color: #b4b4b4;
+    padding: 5px;
+    border-top-left-radius:2px ;
+}
+.title-r-r h2
+{
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+}
+.Reting
+{
+    margin: 20px;
+    text-align: center;
+}
+.Reting h1
+{
+    font-size: 2.5rem;
+    margin: 10px;
+    color: rgb(250, 173, 6);
+}
+.Reting img
+{
+    width: 150px;
+    height: 50px;
+}
+.ratings
+{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin-left: 100px;
+}
+.ratingss{
+  width: 300px;
+  display:block;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+.ratingss h2{
+  font-size: 0.9rem;
+}
+.rating-wrap{
+  max-width: 580px;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.center{
+	width: 162px; 
+	margin: auto;
+    
+}
+
+/*styling star rating*/
+.ratingsss{
+	border: none;
+	float: left;
+    margin-left: 10px;
+}
+
+.ratingsss > .inputs{
+	display: none;
+}
+
+.ratingsss > label:before{
+	content: '\f005';
+	font-family: FontAwesome;
+	margin: 5px;
+	font-size: 1rem;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.ratingsss > .half:before{
+	content: '\f089';
+	position: absolute;
+	cursor: pointer;
+}
+
+
+.ratingsss > label{
+	color: #ddd;
+	float: right;
+	cursor: pointer;
+}
+
+.ratingsss > .inputs:checked ~ label,
+.ratingsss:not(:checked) > label:hover, 
+.ratingsss:not(:checked) > label:hover ~ label{
+	color: #ffd102;
+}
+
+.ratingsss > .inputs:checked + label:hover,
+.ratingsss > .inputs:checked ~ label:hover,
+.ratingsss > label:hover ~ .inputs:checked ~ label,
+.ratingsss > .inputs:checked ~ label:hover ~ label{
+	color: #fbff00;
+}
+.form_rating
+{
+    margin: 10px;
+    margin-left: 100px;
+    text-align: center;
+}
+.form_rating input
+{
+    width: 300px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+}
+.form_rating button
+{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: #fbff00;
+    color: rgb(26, 26, 26);
+}
+.reviewsss
+{
+    margin: 10px;
+    
+}
+.reviewsss h5
+{
+    margin: 10px;
+    font-size: 0.8rem;
+    color: rgb(85, 85, 85);
+}
+.reviewsss p
+{
+    margin: 10px;
+    font-size: 0.8rem;
+    color: rgb(85, 85, 85);
+}
+.reviewsss i{
+    margin: 10px;
+    
+}
+.product_show_add {
+    width: 83%;
+    margin: 10px;
+    position: relative;
+    left: 6vw;
+    top:5vw;
+    
+}
