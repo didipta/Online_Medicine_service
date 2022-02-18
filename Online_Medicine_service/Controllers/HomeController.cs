@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_Medicine_service.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,10 @@ namespace Online_Medicine_service.Controllers
 {
     public class HomeController : Controller
     {
+         
         public ActionResult Index()
         {
+           
             return View();
         }
 

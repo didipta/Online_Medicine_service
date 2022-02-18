@@ -337,14 +337,18 @@ input::placeholder {
 }
 
     .iteam-slider .best-item {
-        width:220px;
+        width:180px;
         height: 210px;
         box-shadow: 0px 0px 5px 0px rgba(168, 165, 165, 0.404);
         margin: 8px;
         margin-top:10px;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
+        text-align:center;
     }
+         .best-item a{
+            color:black;
+        }
         .iteam-slider .best-item:hover {
             box-shadow: 5px 5px 5px 5px rgba(168, 165, 165, 0.404);
         }

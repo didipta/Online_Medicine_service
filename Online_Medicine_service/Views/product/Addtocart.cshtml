@@ -5,29 +5,29 @@
 }
 <div class="heading_p_page">
     <span>
-        <a href="/User/Homepage">Home </a><a href="/product/Productshow">/ Covid-19 Special</a><a href="/product/Productshow">/ Blood Pressure Monitor</a>
+        <a href="/User/Homepage">Home </a><a href="/Product/Productshow/@ViewBag.categories.Id">/ @ViewBag.categories.name</a><a href="#">/ @Model.P_name</a>
     </span>
 </div>
 <div class="add-to-cart">
 
     <div class="cart-product">
         <div class="product-img">
-            <img src="~/Content/img/bloodp.jpg" />
+            <img src="~/Content/img/@Model.P_img" />
         </div>
         <div class="cart-deteils">
             <form action="#" method="post">
                 <div class="cart-title">
-                    <h3>Blood Pressure Monitor</h3>
+                    <h3>@Model.P_name</h3>
                     <p>Rating is (5/5)</p>
                 </div>
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
                 <div class="price">
-                    <h2>৳ 3200.00</h2>
+                    <h2>৳ @Model.P_price</h2>
                 </div>
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
                 <div class="input">
                     <p>Quantity</p>
-                    <input type="number" name="" id="value" value="1" min="1">
+                    <input type="number" name="Quantity" id="value" value="1" min="1">
 
                 </div>
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
@@ -53,6 +53,17 @@
 
 
 
+
+        </div>
+    </div>
+    <div class="review-rating">
+        <div class="title-r-r">
+            <h2>Description</h2>
+        </div>
+        <div class="reviewsss">
+            <p style="margin:15px; padding:30px; text-align:center;">
+                @Model.P_details
+            </p>
         </div>
     </div>
     <div class="review-rating">
@@ -116,40 +127,16 @@
 <div class="product_show_add">
     <div class=" product_show">
 
-        <div class="best-item">
-            <img src="https://cdn1.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJtZWRpY2luZVwvMjdcLzI3OTMzLUtOOTUtRmFjZS1NYXNrLTUtTGF5ZXJzLVByb3RlY3Rpb24tcTFmdi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjIwMCwiaGVpZ2h0IjoyMDAsImZpdCI6Im91dHNpZGUifX19" alt="">
-            <h3>KN95 Face Mask</h3>
-            <p>5 Layers Protection</p>
-            <h2>৳59.00</h2>
-        </div>
-
-        <div class="best-item">
-            <img src="https://cdn1.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJtZWRpY2luZVwvMjhcLzI4MTc3LVN1cmdpY2FsLU1hc2stMy1MYXllcnMtd2l0aC1Ob3NlLVBpbi1SZWl0ZWNoLUNvbG91cnMtQXJteS1wZWp4LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjIwMCwiZml0Ijoib3V0c2lkZSJ9fX0=" alt="">
-            <h3>Surgical Mask </h3>
-            <p>3 Layers with Nose Pin</p>
-            <h2>৳400.00</h2>
-        </div>
-
-        <div class="best-item">
-            <img src="https://cdn1.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJtZWRpY2luZVwvMzBcLzMwNzQ1LVN1cmdpY2FsLU1hc2stMy1MYXllcnMtd2l0aC1Ob3NlLVBpbi1HZXR3ZWxsLXg4dmUucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAsImhlaWdodCI6MjAwLCJmaXQiOiJvdXRzaWRlIn19fQ==" alt="">
-            <h3>Surgical Mask</h3>
-            <p>3 Layers with Nose Pin</p>
-            <h2>৳250.00</h2>
-
-        </div>
-        <div class="best-item">
-            <img src="https://cdn1.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJtZWRpY2luZVwvMzRcLzM0MzQ2LUNsdW5nZW5lLUNvdmlkLVJhcGlkLUFudGlnZW4tVGVzdC1LaXQtU0FSUy1Db1YtMi0xMzJkLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjIwMCwiZml0Ijoib3V0c2lkZSJ9fX0=" alt="">
-            <h3>Clungene Covid-19  </h3>
-            <p> Rapid Antigen Test Kit</p>
-            <h2>৳699.00</h2>
-        </div>
-        <div class="best-item">
-            <img src="https://cdn1.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJtZWRpY2luZVwvMjhcLzI4MTY0LUFsY29ob2wtUGFkLTEwMC1zLVBhY2stZndqNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjIwMCwiaGVpZ2h0IjoyMDAsImZpdCI6Im91dHNpZGUifX19" alt="">
-            <h3>Alcohol Pad</h3>
-            <p>Alcohol Pad (100's Pack)</p>
-            <h2>৳75.00</h2>
-        </div>
-
+        @foreach (var item in ViewBag.Products)
+        {
+            <div class="best-item">
+                <a href="/Product/Addtocart/@item.Id">
+                    <img src="~/Content/img/@item.P_img" alt="">
+                    <h3>@item.P_name</h3>
+                    <h2>৳-@item.P_price</h2>
+                </a>
+            </div>
+        }
 
     </div>
 </div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_Medicine_service.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,15 @@ namespace Online_Medicine_service.Controllers
 {
     public class UserController : Controller
     {
+        Entities Project = new Entities();
         // GET: User
         public ActionResult Homepage()
         {
-            return View();
+            
+            var categories = Project.Categories.ToList();
+            ViewBag.categories = categories;
+            var product = Project.Products.ToList();
+            return View(product);
         }
     }
 }

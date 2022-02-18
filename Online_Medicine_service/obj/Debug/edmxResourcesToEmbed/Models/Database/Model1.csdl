@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="P_id" Type="Int32" Nullable="false" />
-    <Property Name="P_O_quantity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="P_O_quantity" Type="Int32" Nullable="false" />
     <Property Name="P_tprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="U_username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -17,6 +17,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
   </EntityType>
   <EntityType Name="deliverinfo">
     <Key>
@@ -52,10 +53,11 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Order_id" Type="Int32" Nullable="false" />
     <Property Name="P_id" Type="Int32" Nullable="false" />
-    <Property Name="P_O_quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="P_O_quantity" Type="Int32" Nullable="false" />
     <Property Name="P_tprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="U_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="myorder" Relationship="Self.FK_Orderdetails_Products" FromRole="Orderdetails" ToRole="myorders" />
     <NavigationProperty Name="Product" Relationship="Self.FK_Orderdetails_Products1" FromRole="Orderdetails" ToRole="Products" />
   </EntityType>
@@ -66,11 +68,46 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="P_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="P_categorie" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="P_quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="P_details" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="P_categorie_id" Type="Int32" Nullable="false" />
+    <Property Name="P_quantity" Type="Int32" Nullable="false" />
+    <Property Name="P_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_img" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
     <NavigationProperty Name="Orderdetails" Relationship="Self.FK_Orderdetails_Products1" FromRole="Products" ToRole="Orderdetails" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Products" FromRole="Products" ToRole="Rating" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rating1" Type="Int32" Nullable="false" />
+    <Property Name="Review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Rating_Products" FromRole="Rating" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="returndeteli">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="p_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_quantity" Type="Int32" Nullable="false" />
+    <Property Name="p_price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="return_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Returnproduct" Relationship="Self.FK_returndetelis_Returnproduct" FromRole="returndetelis" ToRole="Returnproduct" />
+  </EntityType>
+  <EntityType Name="Returnproduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="return_id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="statuse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="returndetelis" Relationship="Self.FK_returndetelis_Returnproduct" FromRole="Returnproduct" ToRole="returndetelis" />
   </EntityType>
   <EntityType Name="Systemuser">
     <Key>
@@ -88,6 +125,18 @@
     <Property Name="pharmacyname" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="myorders" Relationship="Self.FK_myorders_myorders" FromRole="Systemusers" ToRole="myorders" />
   </EntityType>
+  <Association Name="FK_Products_Categories">
+    <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="P_categorie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_deliverinfo_myorders">
     <End Role="myorders" Type="Self.myorder" Multiplicity="1" />
     <End Role="deliverinfo" Type="Self.deliverinfo" Multiplicity="*" />
@@ -136,6 +185,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Rating_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_returndetelis_Returnproduct">
+    <End Role="Returnproduct" Type="Self.Returnproduct" Multiplicity="1" />
+    <End Role="returndetelis" Type="Self.returndeteli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Returnproduct">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returndetelis">
+        <PropertyRef Name="return_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="addtocarts" EntityType="Self.addtocart" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -143,7 +216,14 @@
     <EntitySet Name="myorders" EntityType="Self.myorder" />
     <EntitySet Name="Orderdetails" EntityType="Self.Orderdetail" />
     <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Ratings" EntityType="Self.Rating" />
+    <EntitySet Name="returndetelis" EntityType="Self.returndeteli" />
+    <EntitySet Name="Returnproducts" EntityType="Self.Returnproduct" />
     <EntitySet Name="Systemusers" EntityType="Self.Systemuser" />
+    <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
     <AssociationSet Name="FK_deliverinfo_myorders" Association="Self.FK_deliverinfo_myorders">
       <End Role="myorders" EntitySet="myorders" />
       <End Role="deliverinfo" EntitySet="deliverinfoes" />
@@ -159,6 +239,14 @@
     <AssociationSet Name="FK_Orderdetails_Products1" Association="Self.FK_Orderdetails_Products1">
       <End Role="Products" EntitySet="Products" />
       <End Role="Orderdetails" EntitySet="Orderdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Products" Association="Self.FK_Rating_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_returndetelis_Returnproduct" Association="Self.FK_returndetelis_Returnproduct">
+      <End Role="Returnproduct" EntitySet="Returnproducts" />
+      <End Role="returndetelis" EntitySet="returndetelis" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

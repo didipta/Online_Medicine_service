@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="P_id" Type="int" Nullable="false" />
-    <Property Name="P_O_quantity" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="P_O_quantity" Type="int" Nullable="false" />
     <Property Name="P_tprice" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="U_username" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="P_name" Type="varchar" MaxLength="100" Nullable="false" />
@@ -48,10 +48,11 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Order_id" Type="int" Nullable="false" />
     <Property Name="P_id" Type="int" Nullable="false" />
-    <Property Name="P_O_quantity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="P_O_quantity" Type="int" Nullable="false" />
     <Property Name="P_tprice" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="U_username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="P_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -60,10 +61,40 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="P_name" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="P_price" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="P_categorie" Type="varchar" MaxLength="200" Nullable="false" />
-    <Property Name="P_quantity" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="P_details" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="P_categorie_id" Type="int" Nullable="false" />
+    <Property Name="P_quantity" Type="int" Nullable="false" />
+    <Property Name="P_details" Type="text" Nullable="false" />
     <Property Name="P_img" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rating" Type="int" Nullable="false" />
+    <Property Name="Review" Type="text" Nullable="false" />
+    <Property Name="Product_id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="returndetelis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="p_quantity" Type="int" Nullable="false" />
+    <Property Name="p_price" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="return_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Returnproduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="return_id" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="reason" Type="text" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="statuse" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
   <EntityType Name="Systemusers">
     <Key>
@@ -128,6 +159,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Products_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="P_categorie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_returndetelis_Returnproduct">
+    <End Role="Returnproduct" Type="Self.Returnproduct" Multiplicity="1" />
+    <End Role="returndetelis" Type="Self.returndetelis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Returnproduct">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returndetelis">
+        <PropertyRef Name="return_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="addtocart" EntityType="Self.addtocart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
@@ -135,6 +202,9 @@
     <EntitySet Name="myorders" EntityType="Self.myorders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orderdetails" EntityType="Self.Orderdetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="returndetelis" EntityType="Self.returndetelis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Returnproduct" EntityType="Self.Returnproduct" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Systemusers" EntityType="Self.Systemusers" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_deliverinfo_myorders" Association="Self.FK_deliverinfo_myorders">
       <End Role="myorders" EntitySet="myorders" />
@@ -151,6 +221,18 @@
     <AssociationSet Name="FK_Orderdetails_Products1" Association="Self.FK_Orderdetails_Products1">
       <End Role="Products" EntitySet="Products" />
       <End Role="Orderdetails" EntitySet="Orderdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Products" Association="Self.FK_Rating_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_returndetelis_Returnproduct" Association="Self.FK_returndetelis_Returnproduct">
+      <End Role="Returnproduct" EntitySet="Returnproduct" />
+      <End Role="returndetelis" EntitySet="returndetelis" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

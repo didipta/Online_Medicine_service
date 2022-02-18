@@ -56,6 +56,7 @@
           <ScalarProperty Name="P_tprice" ColumnName="P_tprice" />
           <ScalarProperty Name="U_username" ColumnName="U_username" />
           <ScalarProperty Name="P_name" ColumnName="P_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -65,10 +66,43 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="P_name" ColumnName="P_name" />
           <ScalarProperty Name="P_price" ColumnName="P_price" />
-          <ScalarProperty Name="P_categorie" ColumnName="P_categorie" />
+          <ScalarProperty Name="P_categorie_id" ColumnName="P_categorie_id" />
           <ScalarProperty Name="P_quantity" ColumnName="P_quantity" />
           <ScalarProperty Name="P_details" ColumnName="P_details" />
           <ScalarProperty Name="P_img" ColumnName="P_img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="Model.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rating1" ColumnName="rating" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="returndetelis">
+      <EntityTypeMapping TypeName="Model.returndeteli">
+        <MappingFragment StoreEntitySet="returndetelis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_quantity" ColumnName="p_quantity" />
+          <ScalarProperty Name="p_price" ColumnName="p_price" />
+          <ScalarProperty Name="return_id" ColumnName="return_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Returnproducts">
+      <EntityTypeMapping TypeName="Model.Returnproduct">
+        <MappingFragment StoreEntitySet="Returnproduct">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="return_id" ColumnName="return_id" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="statuse" ColumnName="statuse" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
