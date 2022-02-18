@@ -156,3 +156,7 @@ D:\Online_Medicine_service\Online_Medicine_service\obj\Debug\Online_Medicine_ser
 D:\Online_Medicine_service\Online_Medicine_service\obj\Debug\Online_Medicine_service.csproj.CopyComplete
 D:\Online_Medicine_service\Online_Medicine_service\obj\Debug\Online_Medicine_service.dll
 D:\Online_Medicine_service\Online_Medicine_service\obj\Debug\Online_Medicine_service.pdb
+D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.dll
+D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.SqlServer.dll
+D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.xml
+D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.SqlServer.xml
