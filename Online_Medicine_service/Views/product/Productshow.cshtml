@@ -6,14 +6,14 @@
 
 <div class="heading_p_page">
     <span>
-        <a href="/User/Homepage">Home </a><a href="/product/Productshow">/ @ViewBag.categories.name</a>
+        <a href="/User/Homepage">Home </a><a href="#">/ @Model.name</a>
     </span>
 </div>
 
 
 <div class="product_show">
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
     <div class="best-item">
         <a href="/Product/Addtocart/@item.Id">

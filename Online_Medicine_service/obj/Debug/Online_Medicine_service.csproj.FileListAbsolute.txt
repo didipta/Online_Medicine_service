@@ -160,3 +160,5 @@ D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.dll
 D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.SqlServer.dll
 D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.xml
 D:\Online_Medicine_service\Online_Medicine_service\bin\EntityFramework.SqlServer.xml
+D:\Online_Medicine_service\Online_Medicine_service\bin\AutoMapper.dll
+D:\Online_Medicine_service\Online_Medicine_service\bin\AutoMapper.xml

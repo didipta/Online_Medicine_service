@@ -76,7 +76,7 @@
                 <h1>5/5</h1>
                 <img src="~/Content/img/rating.jpg">
             </div>
-            <img src="~/Content/img/retings.jpg" class="ratings">
+            <img src="~/Content/img/ratingsss.png" class="ratings">
             <div class="r-r-p">
                 <div class="ratingss">
                     <div class="rating-wrap">
@@ -126,9 +126,15 @@
 </div>
 <div class="product_show_add">
     <div class=" product_show">
-
+        @{ 
+            int count = 0;
+        }
         @foreach (var item in ViewBag.Products)
         {
+            if (++count==6)
+            {
+                break;
+            }
             <div class="best-item">
                 <a href="/Product/Addtocart/@item.Id">
                     <img src="~/Content/img/@item.P_img" alt="">

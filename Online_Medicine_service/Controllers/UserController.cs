@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
+using Online_Medicine_service.Models.Database.Models;
 
 namespace Online_Medicine_service.Controllers
 {
@@ -13,10 +15,20 @@ namespace Online_Medicine_service.Controllers
         // GET: User
         public ActionResult Homepage()
         {
-            
-            var categories = Project.Categories.ToList();
+            var config = new MapperConfiguration(
+                cfg =>
+                {
+                    cfg.CreateMap<Category,categorymodel>();
+                    cfg.CreateMap<Product, productmodel>();
+                }
+
+                );
+            var categorie = Project.Categories.ToList();
+            Mapper mapper = new Mapper(config);
+            var categories = mapper.Map<List<categorymodel>>(categorie);
             ViewBag.categories = categories;
-            var product = Project.Products.ToList();
+            var products = Project.Products.ToList();
+            var product = mapper.Map<List<productmodel>>(products);
             return View(product);
         }
     }
