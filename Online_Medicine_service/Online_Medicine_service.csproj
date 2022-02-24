@@ -163,9 +163,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Database\Models\categorymodel.cs" />
+    <Compile Include="Models\Database\Models\myordermodel.cs" />
     <Compile Include="Models\Database\Models\productcategorymodel.cs" />
     <Compile Include="Models\Database\Models\productmodel.cs" />
+    <Compile Include="Models\Database\Models\RequiredAttribute.cs" />
     <Compile Include="Models\Database\Models\systemusermodel.cs" />
+    <Compile Include="Models\Database\Models\systemuserordermodel.cs" />
+    <Compile Include="Models\Database\Models\userlogin.cs" />
     <Compile Include="Models\Database\myorder.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -191,8 +195,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\homepage.css" />
+    <Content Include="Content\img\pro.png" />
     <Content Include="Content\indexpage.css" />
     <Content Include="Content\productpage.css" />
+    <Content Include="Content\profilepage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -250,6 +256,7 @@
     <Content Include="Views\Shared\_productpage.cshtml" />
     <Content Include="Views\product\Productshow.cshtml" />
     <Content Include="Views\product\Addtocart.cshtml" />
+    <Content Include="Views\User\Profilepage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

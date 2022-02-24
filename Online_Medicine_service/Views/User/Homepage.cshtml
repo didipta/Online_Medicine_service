@@ -26,7 +26,15 @@
             </div>
         </div>
         <div class="middle-header-rigth">
-            <a href="#" class="profile"><i class="fas fa-user-alt"></i><span style="color:black; font-size: .8rem; margin-left:2px; font-weight:900;">diptasaha</span></a>
+            @if (ViewBag.username == " ")
+            {
+                <a href="/index/singinpage" class="profile"><i class="fas fa-user-alt"></i><span style="color:black; font-size: .8rem; margin-left:2px; font-weight:900;">Log-in</span></a>
+            }
+            else
+            {
+                <a href="/User/Profilepage" class="profile"><i class="fas fa-user-alt"></i><span style="color: black; text-transform: lowercase; font-size: .8rem; margin-left: 2px; font-weight: 900;">@ViewBag.username</span></a>
+            }
+
             <a href="#"><i class="fas fa-comments"></i></a>
             <a href=""><i class="fas fa-map-marker-alt"></i></a>
         </div>

@@ -394,3 +394,9 @@ body {
     font-weight: 900;
     color: rgb(110, 110, 110);
 }
+.error {
+    color: rgb(243, 38, 38);
+    font-weight: 900;
+    margin-left: 15px;
+    font-size: 0.8rem;
+}

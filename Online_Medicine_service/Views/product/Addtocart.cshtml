@@ -41,7 +41,15 @@
         <div class="delivery-status">
             <div class="delivery">
                 <h6>Delivery</h6>
-                <p><i class="fas fa-map-marker-alt"></i> Home, Nikojo dhaka </p>
+                @if (ViewBag.useer ==" ")
+                {
+                    <p><i class="fas fa-map-marker-alt"></i> Add your delivery Address </p>
+                }
+                else
+                {
+                   <p><i class="fas fa-map-marker-alt"></i> @ViewBag.useer</p>
+                }
+
                 <p><i class="fas fa-truck"></i> Home Delivery(2 - 5 day(s))-৳ 40</p>
 
             </div>

@@ -1,0 +1,252 @@
+﻿
+
+#profile-info {
+    width: 40%;
+    height: 550px;
+    position: relative;
+    left: 30%;
+    top: 2vw;
+    align-items: center;
+    margin: 10px;
+}
+
+    #profile-info h1 {
+        margin-top: 0px;
+    }
+
+    #profile-info .img {
+        margin-left: 210px;
+    }
+
+        #profile-info .img img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 5px 1px rgba(141, 141, 141, 0.548);
+        }
+
+    #profile-info .file-style input {
+        background-color: #161616;
+        display: none;
+        visibility: none;
+    }
+
+    #profile-info .Add-file {
+        position: absolute;
+        top: 7.5vw;
+    }
+
+        #profile-info .Add-file i {
+            width: 30px;
+            height: 30px;
+            font-size: 1.3rem;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 1px 1px rgba(134, 134, 134, 0.548);
+            text-align: center;
+            cursor: pointer;
+        }
+
+    #profile-info fieldset {
+        width: 600px;
+        height: 60px;
+        border: 1px solid rgb(212, 29, 90);
+        font-weight:700;
+        border-radius: 5px;
+        color: rgb(212, 29, 90);
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding-left: 10px;
+        font-size: 0.8rem;
+    }
+
+    #profile-info .input-file {
+        max-width: 600px;
+        width: 100%;
+        margin-top: -17px;
+        height: 55px;
+        display: grid;
+        padding: 0 0.4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+        #profile-info .input-file input {
+            width: 550px;
+            height: 40px;
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-weight: 100;
+            font-size: .9rem;
+            color: rgb(104, 104, 104);
+        }
+
+    #profile-info .btn {
+        width: 150px;
+        background-color: rgb(212, 29, 90);
+        border: none;
+        outline: none;
+        height: 49px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin: 10px 0;
+        margin-right: 8px;
+        float: right;
+        cursor: pointer;
+        transition: 0.5s;
+        font-size: 1.1rem;
+        box-shadow: 2px 2px 5px 2px rgba(141, 141, 141, 0.548);
+    }
+
+        #profile-info .btn:hover {
+            background-color: #4d84e2;
+        }
+
+#Change-password {
+    width: 40%;
+    height: 400px;
+    position: relative;
+    left: 30%;
+    top: 5vw;
+    align-items: center;
+}
+
+    #Change-password .head, .order {
+        height: 50px;
+        box-shadow: 0px 1px 0px 0px rgba(141, 141, 141, 0.548);
+    }
+
+        #Change-password .head h1, .order h1 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 900;
+            font-size: .9rem;
+        }
+
+    #Change-password .Changepassword {
+        margin-top: 30px;
+        margin-left: 10px;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #Change-password .input-file-cp input {
+        width: 560px;
+        height: 50px;
+        padding: 20px;
+        margin: 10px;
+        border: .5px solid rgb(190, 188, 188);
+        background: none;
+        outline: none;
+    }
+
+    #Change-password input::placeholder {
+        font-size: 1rem;
+    }
+
+#profileimg {
+    box-shadow: 1px 1px 5px 1px rgba(141, 141, 141, 0.548);
+    display: none;
+    width: 500px;
+    position: absolute;
+    top: 6vw;
+    left: 35%;
+    background-color: rgb(255, 255, 255);
+}
+
+    #profileimg i {
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+        #profileimg i:hover {
+            color: rgb(253, 44, 44);
+        }
+
+    #profileimg .img {
+        margin-left: 150px;
+    }
+
+        #profileimg .img img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 5px 1px rgba(141, 141, 141, 0.548);
+        }
+
+    #profileimg .file-style input {
+        background-color: #161616;
+        display: none;
+        visibility: none;
+    }
+
+    #profileimg .Add-file i {
+        width: 30px;
+        height: 30px;
+        font-size: 1.3rem;
+        padding: 5px;
+        border-radius: 50%;
+        box-shadow: 1px 1px 1px 1px rgba(134, 134, 134, 0.548);
+        text-align: center;
+        cursor: pointer;
+    }
+
+.item-list {
+    margin: 10px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.items {
+    width: 180px;
+    height: 220px;
+    margin: 15px;
+    background-color: #4d84e2;
+    display: inline-block;
+    box-shadow: 1px 1px 1px 1px rgba(156, 156, 156, 0.37);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding-top: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+    .items h3 {
+        font-size: .8rem;
+        color: #000;
+        font-weight: 900;
+        margin-bottom: 2px;
+        text-align: center;
+    }
+
+    .items h4 {
+        font-size: 12px;
+        color: rgb(110, 110, 110);
+        margin-bottom: 2px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+.item-list a {
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.items img {
+    width: 150px;
+    height: 130px;
+    margin-left: 10px;
+}
+
+    .items img:hover {
+        transform: scale(1.1);
+        transition: 2s transform;
+    }

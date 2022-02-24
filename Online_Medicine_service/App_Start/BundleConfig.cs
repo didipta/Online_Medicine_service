@@ -30,6 +30,7 @@ namespace Online_Medicine_service
                       "~/Content/productpage.css",
                       "~/Content/jquery.nice-number.css",
                       "~/Content/addtocart.css",
+                      "~/Content/profilepage.css",
                       "~/Content/homepage.css"));
         }
     }

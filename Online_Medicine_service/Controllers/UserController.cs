@@ -13,6 +13,7 @@ namespace Online_Medicine_service.Controllers
     {
         Entities Project = new Entities();
         // GET: User
+       // [Authorize]
         public ActionResult Homepage()
         {
             var config = new MapperConfiguration(
@@ -29,7 +30,31 @@ namespace Online_Medicine_service.Controllers
             ViewBag.categories = categories;
             var products = Project.Products.ToList();
             var product = mapper.Map<List<productmodel>>(products);
+            if (Session["Usernmae"]!= null)
+            {
+                ViewBag.username = Session["Usernmae"].ToString();
+            }
+            else
+            {
+                ViewBag.username = " ";
+            }
+           
             return View(product);
+        }
+
+        public ActionResult Profilepage()
+        {
+
+            if (Session["Usernmae"] != null)
+            {
+                var username = Session["Usernmae"].ToString();
+                var useer = (from u in Project.Systemusers
+                             where u.U_username == username
+                             select u).FirstOrDefault();
+
+                return View(useer);
+            }
+            return View();
         }
     }
 }

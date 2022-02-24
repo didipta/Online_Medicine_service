@@ -50,6 +50,20 @@ namespace Online_Medicine_service.Controllers
             ViewBag.Products = (from P in Project.Products
                                 where P.P_categorie_id == categori.Id
                                 select P).ToList();
+
+            if (Session["Usernmae"] != null)
+            {
+                var username= Session["Usernmae"].ToString();
+                var useer = (from u in Project.Systemusers
+                                 where u.U_username == username
+                                 select u).FirstOrDefault();
+
+                ViewBag.useer = useer.U_address;
+            }
+            else
+            {
+                ViewBag.useer =" ";
+            }
             return View(Prodruct);
         }
     }
