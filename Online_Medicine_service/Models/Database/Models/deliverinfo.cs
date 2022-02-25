@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Medicine_service.Models.Database
+namespace Online_Medicine_service.Models.Database.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class returndeteli
+    public partial class deliverinfo
     {
-        public int id { get; set; }
-        public string p_name { get; set; }
-        public int p_quantity { get; set; }
-        public string p_price { get; set; }
-        public int return_id { get; set; }
+        public int Id { get; set; }
+        public int O_id { get; set; }
+        public string D_username { get; set; }
+        public string D_statue { get; set; }
+        public string D_time { get; set; }
     
-        public virtual Returnproduct Returnproduct { get; set; }
+        public virtual myorder myorder { get; set; }
     }
 }

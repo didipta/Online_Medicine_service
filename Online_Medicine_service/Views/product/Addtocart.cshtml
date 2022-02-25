@@ -18,7 +18,7 @@
             <form action="#" method="post">
                 <div class="cart-title">
                     <h3>@Model.P_name</h3>
-                    <p>Rating is (5/5)</p>
+                    <p>Rating is (@ViewBag.totalrat/5)</p>
                 </div>
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
                 <div class="price">
@@ -81,36 +81,48 @@
         <div style="display: flex;">
 
             <div class="Reting">
-                <h1>5/5</h1>
+                <h1>@ViewBag.totalrat/5</h1>
                 <img src="~/Content/img/rating.jpg">
             </div>
             <img src="~/Content/img/ratingsss.png" class="ratings">
             <div class="r-r-p">
                 <div class="ratingss">
                     <div class="rating-wrap">
-                        <h2>Star Rating (<span id="rating-value"></span>/5) </h2>
-                        <div class="center">
-                            <fieldset class="ratingsss">
-                                <input type="radio" id="star5" name="rating" value="5" class="inputs" /><label for="star5" class="full" title="Awesome"></label>
-                                <input type="radio" id="star4.5" name="rating" value="4.5" class="inputs" /><label for="star4.5" class="half"></label>
-                                <input type="radio" id="star4" name="rating" value="4" class="inputs" /><label for="star4" class="full"></label>
-                                <input type="radio" id="star3.5" name="rating" value="3.5" class="inputs" /><label for="star3.5" class="half"></label>
-                                <input type="radio" id="star3" name="rating" value="3" class="inputs" /><label for="star3" class="full"></label>
-                                <input type="radio" id="star2.5" name="rating" value="2.5" class="inputs" /><label for="star2.5" class="half"></label>
-                                <input type="radio" id="star2" name="rating" value="2" class="inputs" /><label for="star2" class="full"></label>
-                                <input type="radio" id="star1.5" name="rating" value="1.5" class="inputs" /><label for="star1.5" class="half"></label>
-                                <input type="radio" id="star1" name="rating" value="1" class="inputs" /><label for="star1" class="full"></label>
-                                <input type="radio" id="star0.5" name="rating" value="0.5" class="inputs" /><label for="star0.5" class="half"></label>
+                        @if (ViewBag.rating == " "|| ViewBag.rates =="")
+                        {
+                            <h2>Star Rating (<span id="rating-value"></span>/5) </h2>
+                        }
+                        else
+                        {
+                            <h2>Your providing Rating is (<span>@ViewBag.rates</span>/5) </h2>
+                        }
+                        @if (ViewBag.rating == " " || ViewBag.rates =="")
+                        {
+                            <div class="center">
+                                <fieldset class="ratingsss">
+                                    <input type="radio" id="star5" name="rating" value="5" class="inputs" /><label for="star5" class="full" title="Awesome"></label>
+                                    <input type="radio" id="star4.5" name="rating" value="4.5" class="inputs" /><label for="star4.5" class="half"></label>
+                                    <input type="radio" id="star4" name="rating" value="4" class="inputs" /><label for="star4" class="full"></label>
+                                    <input type="radio" id="star3.5" name="rating" value="3.5" class="inputs" /><label for="star3.5" class="half"></label>
+                                    <input type="radio" id="star3" name="rating" value="3" class="inputs" /><label for="star3" class="full"></label>
+                                    <input type="radio" id="star2.5" name="rating" value="2.5" class="inputs" /><label for="star2.5" class="half"></label>
+                                    <input type="radio" id="star2" name="rating" value="2" class="inputs" /><label for="star2" class="full"></label>
+                                    <input type="radio" id="star1.5" name="rating" value="1.5" class="inputs" /><label for="star1.5" class="half"></label>
+                                    <input type="radio" id="star1" name="rating" value="1" class="inputs" /><label for="star1" class="full"></label>
+                                    <input type="radio" id="star0.5" name="rating" value="0.5" class="inputs" /><label for="star0.5" class="half"></label>
 
-                            </fieldset>
-                        </div>
+                                </fieldset>
+                            </div>
+                        }
+
 
 
 
                     </div>
                 </div>
-                <form action="#" method="post" class="form_rating">
+                <form action="/Product/reviwerating" method="post" class="form_rating">
                     <input type="hidden" value="" name="rating" id="text-value">
+                    <input type="hidden" value="@Model.Id" name="product_id" id="text-value">
                     <input type="text" name="review" placeholder="please provide your review...."><br>
                     <button>Submit</button>
                 </form>
@@ -121,13 +133,17 @@
         <div class="title-r-r">
             <h2>All Reviews</h2>
         </div>
-        <dv class="reviewsss">
-            <h5>by Dipta saha</h5>
-            <p>This product is very good.</p>
-            <i class="far fa-thumbs-up"></i>(10)
-            <i class="far fa-comment"></i>(10)
-            <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
-        </dv>
+        @foreach (var item in ViewBag.Ratings)
+        {
+    <dv class="reviewsss">
+        <h5>by @item.username<span>(@item.rating1/5)</span></h5>
+        <p>@item.Review.</p>
+        <i class="far fa-thumbs-up"></i>(@item.id)
+        <i class="far fa-comment"></i>(@item.id)
+        <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
+    </dv>
+        }
+
     </div>
 
 

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Medicine_service.Models.Database
+namespace Online_Medicine_service.Models.Database.Models
 {
     using System;
     using System.Data.Entity;

@@ -7,31 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Medicine_service.Models.Database
+namespace Online_Medicine_service.Models.Database.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Systemuser
+    public partial class Returnproduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Systemuser()
+        public Returnproduct()
         {
-            this.myorders = new HashSet<myorder>();
+            this.returndetelis = new HashSet<returndeteli>();
         }
     
-        public int Id { get; set; }
-        public string U_name { get; set; }
-        public string U_phone { get; set; }
-        public string U_address { get; set; }
-        public string U_username { get; set; }
-        public string U_email { get; set; }
-        public string U_password { get; set; }
-        public string Usertype { get; set; }
-        public string U_profileimg { get; set; }
-        public string pharmacyname { get; set; }
+        public int id { get; set; }
+        public string return_id { get; set; }
+        public string reason { get; set; }
+        public System.DateTime date { get; set; }
+        public string statuse { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<myorder> myorders { get; set; }
+        public virtual ICollection<returndeteli> returndetelis { get; set; }
     }
 }

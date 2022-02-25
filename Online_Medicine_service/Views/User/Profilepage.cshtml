@@ -1,4 +1,4 @@
-﻿@model Online_Medicine_service.Models.Database.Systemuser
+﻿@model Online_Medicine_service.Models.Database.Models.Systemuser
 @{
     ViewBag.Title = "Profilepage";
     Layout = "~/Views/Shared/_Userlayout.cshtml";
@@ -114,16 +114,16 @@
     <div id="profileimg">
         <div onclick="myFunction2()"> <i class="fa fa-times" aria-hidden="true"></i></div>
 
-        <form action="" method="Post" class="profile-form" enctype="multipart/form-data">
+        <form action="/User/Profileimg" method="Post" class="profile-form" enctype="multipart/form-data">
 
-            <input type="hidden" name="id" value="">
+            
             <div class="img">
 
-                <img src="/img/" alt="" id="blah">
+                <img src="~/Content/img/@Model.U_profileimg" alt="" id="blah">
 
                 <label for="imgfile" class="Add-file"><i type="file" class="fa fa-plus" aria-hidden="true"></i></label>
-                <div class="file-style"> <input type="file" name="imgfile" id="imgfile" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"></div>
-
+                <div class="file-style"> <input type="file" name="" id="imgfile" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0]); myfuction()"></div>
+                <input type="hidden" name="Imgfile" id="Imgfiles">
                 <span class="error" style=""></span>
 
                 <br> <button class="btn">Save </button>
@@ -132,5 +132,18 @@
 
     </div>
 </div>
+<script>
+    function myfuction() {
+        var fullPath = document.getElementById('imgfile').value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+            document.getElementById("Imgfiles").value = filename;
+        }
+    }
+</script>
 
 

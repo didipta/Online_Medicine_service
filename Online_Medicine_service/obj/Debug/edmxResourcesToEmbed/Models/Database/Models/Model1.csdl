@@ -10,6 +10,7 @@
     <Property Name="P_tprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="U_username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_img" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -58,6 +59,7 @@
     <Property Name="U_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_img" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="myorder" Relationship="Self.FK_Orderdetails_Products" FromRole="Orderdetails" ToRole="myorders" />
     <NavigationProperty Name="Product" Relationship="Self.FK_Orderdetails_Products1" FromRole="Orderdetails" ToRole="Products" />
   </EntityType>
@@ -209,7 +211,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="addtocarts" EntityType="Self.addtocart" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="deliverinfoes" EntityType="Self.deliverinfo" />

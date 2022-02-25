@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Medicine_service.Models.Database
+namespace Online_Medicine_service.Models.Database.Models
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Online_Medicine_service.Models.Database
     public partial class Rating
     {
         public int id { get; set; }
-        public int rating1 { get; set; }
+        public double rating1 { get; set; }
         public string Review { get; set; }
         public int Product_id { get; set; }
         public string username { get; set; }

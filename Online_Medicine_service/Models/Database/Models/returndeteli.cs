@@ -7,18 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Medicine_service.Models.Database
+namespace Online_Medicine_service.Models.Database.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class addtocart
+    public partial class returndeteli
     {
-        public int Id { get; set; }
-        public int P_id { get; set; }
-        public int P_O_quantity { get; set; }
-        public string P_tprice { get; set; }
-        public string U_username { get; set; }
-        public string P_name { get; set; }
+        public int id { get; set; }
+        public string p_name { get; set; }
+        public int p_quantity { get; set; }
+        public string p_price { get; set; }
+        public int return_id { get; set; }
+    
+        public virtual Returnproduct Returnproduct { get; set; }
     }
 }

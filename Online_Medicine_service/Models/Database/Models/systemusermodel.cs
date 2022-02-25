@@ -6,7 +6,7 @@ namespace Online_Medicine_service.Models.Database.Models
     {
 
         [Required(ErrorMessage = "Please enter your Firstname")]
-        [StringLength(15, MinimumLength = 5)]
+        [StringLength(15, MinimumLength = 3)]
         public string Firstname { get; set; }
 
 
