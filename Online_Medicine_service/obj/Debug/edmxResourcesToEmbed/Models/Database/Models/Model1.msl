@@ -94,6 +94,7 @@
           <ScalarProperty Name="p_quantity" ColumnName="p_quantity" />
           <ScalarProperty Name="p_price" ColumnName="p_price" />
           <ScalarProperty Name="return_id" ColumnName="return_id" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

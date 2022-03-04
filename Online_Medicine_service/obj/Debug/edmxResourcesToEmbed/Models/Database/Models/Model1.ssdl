@@ -87,6 +87,7 @@
     <Property Name="p_quantity" Type="int" Nullable="false" />
     <Property Name="p_price" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="return_id" Type="int" Nullable="false" />
+    <Property Name="p_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Returnproduct">
     <Key>
@@ -113,6 +114,18 @@
     <Property Name="U_profileimg" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="pharmacyname" Type="varchar" MaxLength="500" Nullable="false" />
   </EntityType>
+  <Association Name="FK_addtocart_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="addtocart" Type="Self.addtocart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="addtocart">
+        <PropertyRef Name="P_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_deliverinfo_myorders">
     <End Role="myorders" Type="Self.myorders" Multiplicity="1" />
     <End Role="deliverinfo" Type="Self.deliverinfo" Multiplicity="*" />
@@ -185,6 +198,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_returndetelis_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="returndetelis" Type="Self.returndetelis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="returndetelis">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_returndetelis_Returnproduct">
     <End Role="Returnproduct" Type="Self.Returnproduct" Multiplicity="1" />
     <End Role="returndetelis" Type="Self.returndetelis" Multiplicity="*" />
@@ -208,6 +233,10 @@
     <EntitySet Name="returndetelis" EntityType="Self.returndetelis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Returnproduct" EntityType="Self.Returnproduct" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Systemusers" EntityType="Self.Systemusers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_addtocart_Products" Association="Self.FK_addtocart_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="addtocart" EntitySet="addtocart" />
+    </AssociationSet>
     <AssociationSet Name="FK_deliverinfo_myorders" Association="Self.FK_deliverinfo_myorders">
       <End Role="myorders" EntitySet="myorders" />
       <End Role="deliverinfo" EntitySet="deliverinfo" />
@@ -231,6 +260,10 @@
     <AssociationSet Name="FK_Rating_Products" Association="Self.FK_Rating_Products">
       <End Role="Products" EntitySet="Products" />
       <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_returndetelis_Products" Association="Self.FK_returndetelis_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="returndetelis" EntitySet="returndetelis" />
     </AssociationSet>
     <AssociationSet Name="FK_returndetelis_Returnproduct" Association="Self.FK_returndetelis_Returnproduct">
       <End Role="Returnproduct" EntitySet="Returnproduct" />

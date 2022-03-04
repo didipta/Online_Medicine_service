@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\indexController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\productController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,7 @@
     <Content Include="Content\indexpage.css" />
     <Content Include="Content\productpage.css" />
     <Content Include="Content\profilepage.css" />
+    <Content Include="Content\orderpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +260,7 @@
     <Content Include="Views\product\Productshow.cshtml" />
     <Content Include="Views\product\Addtocart.cshtml" />
     <Content Include="Views\User\Profilepage.cshtml" />
+    <Content Include="Views\Orders\Addtocart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

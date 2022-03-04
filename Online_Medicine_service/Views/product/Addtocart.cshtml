@@ -15,7 +15,8 @@
             <img src="~/Content/img/@Model.P_img" />
         </div>
         <div class="cart-deteils">
-            <form action="#" method="post">
+            <form action="/Orders/Addtocartadd" method="post">
+                <input type="hidden" name="productid" value="@Model.Id" />
                 <div class="cart-title">
                     <h3>@Model.P_name</h3>
                     <p>Rating is (@ViewBag.totalrat/5)</p>
@@ -27,7 +28,7 @@
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
                 <div class="input">
                     <p>Quantity</p>
-                    <input type="number" name="Quantity" id="value" value="1" min="1">
+                    <input type="number" name="Productquantity" id="value" value="1" min="1">
 
                 </div>
                 <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">

@@ -19,7 +19,9 @@ namespace Online_Medicine_service.Models.Database.Models
         public int p_quantity { get; set; }
         public string p_price { get; set; }
         public int return_id { get; set; }
+        public int p_id { get; set; }
     
+        public virtual Product Product { get; set; }
         public virtual Returnproduct Returnproduct { get; set; }
     }
 }

@@ -17,8 +17,10 @@ namespace Online_Medicine_service.Models.Database.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.addtocarts = new HashSet<addtocart>();
             this.Orderdetails = new HashSet<Orderdetail>();
             this.Ratings = new HashSet<Rating>();
+            this.returndetelis = new HashSet<returndeteli>();
         }
     
         public int Id { get; set; }
@@ -29,10 +31,14 @@ namespace Online_Medicine_service.Models.Database.Models
         public string P_details { get; set; }
         public string P_img { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<addtocart> addtocarts { get; set; }
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orderdetail> Orderdetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rating> Ratings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<returndeteli> returndetelis { get; set; }
     }
 }

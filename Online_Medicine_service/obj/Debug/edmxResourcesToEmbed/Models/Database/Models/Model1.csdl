@@ -11,6 +11,7 @@
     <Property Name="U_username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="p_img" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_addtocart_Products" FromRole="addtocart" ToRole="Products" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -74,9 +75,11 @@
     <Property Name="P_quantity" Type="Int32" Nullable="false" />
     <Property Name="P_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="P_img" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="addtocarts" Relationship="Self.FK_addtocart_Products" FromRole="Products" ToRole="addtocart" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
     <NavigationProperty Name="Orderdetails" Relationship="Self.FK_Orderdetails_Products1" FromRole="Products" ToRole="Orderdetails" />
     <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Products" FromRole="Products" ToRole="Rating" />
+    <NavigationProperty Name="returndetelis" Relationship="Self.FK_returndetelis_Products" FromRole="Products" ToRole="returndetelis" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>
@@ -98,6 +101,8 @@
     <Property Name="p_quantity" Type="Int32" Nullable="false" />
     <Property Name="p_price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="return_id" Type="Int32" Nullable="false" />
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_returndetelis_Products" FromRole="returndetelis" ToRole="Products" />
     <NavigationProperty Name="Returnproduct" Relationship="Self.FK_returndetelis_Returnproduct" FromRole="returndetelis" ToRole="Returnproduct" />
   </EntityType>
   <EntityType Name="Returnproduct">
@@ -127,6 +132,18 @@
     <Property Name="pharmacyname" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="myorders" Relationship="Self.FK_myorders_myorders" FromRole="Systemusers" ToRole="myorders" />
   </EntityType>
+  <Association Name="FK_addtocart_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="addtocart" Type="Self.addtocart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="addtocart">
+        <PropertyRef Name="P_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Products_Categories">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
     <End Role="Products" Type="Self.Product" Multiplicity="*" />
@@ -199,6 +216,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_returndetelis_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="returndetelis" Type="Self.returndeteli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="returndetelis">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_returndetelis_Returnproduct">
     <End Role="Returnproduct" Type="Self.Returnproduct" Multiplicity="1" />
     <End Role="returndetelis" Type="Self.returndeteli" Multiplicity="*" />
@@ -222,6 +251,10 @@
     <EntitySet Name="returndetelis" EntityType="Self.returndeteli" />
     <EntitySet Name="Returnproducts" EntityType="Self.Returnproduct" />
     <EntitySet Name="Systemusers" EntityType="Self.Systemuser" />
+    <AssociationSet Name="FK_addtocart_Products" Association="Self.FK_addtocart_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="addtocart" EntitySet="addtocarts" />
+    </AssociationSet>
     <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Products" EntitySet="Products" />
@@ -245,6 +278,10 @@
     <AssociationSet Name="FK_Rating_Products" Association="Self.FK_Rating_Products">
       <End Role="Products" EntitySet="Products" />
       <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_returndetelis_Products" Association="Self.FK_returndetelis_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="returndetelis" EntitySet="returndetelis" />
     </AssociationSet>
     <AssociationSet Name="FK_returndetelis_Returnproduct" Association="Self.FK_returndetelis_Returnproduct">
       <End Role="Returnproduct" EntitySet="Returnproducts" />

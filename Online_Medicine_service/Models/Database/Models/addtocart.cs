@@ -21,5 +21,7 @@ namespace Online_Medicine_service.Models.Database.Models
         public string U_username { get; set; }
         public string P_name { get; set; }
         public string p_img { get; set; }
+    
+        public virtual Product Product { get; set; }
     }
 }
