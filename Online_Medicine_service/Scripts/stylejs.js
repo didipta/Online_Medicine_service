@@ -71,3 +71,31 @@ function myFunction() {
 function myFunction2() {
     document.getElementById("profileimg").style.display = "none";
 }
+
+
+
+
+
+function bkashclick() {
+
+    document.getElementById("bkashback").style.display = "block";
+    document.getElementById("cardback").style.display = "none";
+    document.getElementById("cashback").style.display = "none";
+}
+function cashclick() {
+    document.getElementById("bkashback").style.display = "none";
+    document.getElementById("cashback").style.display = "block";
+    document.getElementById("cardback").style.display = "none";
+}
+function cardclick() {
+    document.getElementById("bkashback").style.display = "none";
+    document.getElementById("cashback").style.display = "none";
+    document.getElementById("cardback").style.display = "block";
+}
+function backclick() {
+    document.getElementById("payment").style.display = "none";
+
+}
+function checkclick() {
+    document.getElementById("payment").style.display = "block";
+}

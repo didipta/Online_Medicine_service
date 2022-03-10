@@ -13,15 +13,12 @@
         </a>
         <div class="search-box">
             <label>
-                <input type="search" name="search" id="search" class="search" placeholder="Search for anything of your mind...….."><button><i class="fas fa-search"></i></button>
+                <input type="text" name="search" id="search-live" class="search" placeholder="Search for anything of your mind...….."><button><i class="fas fa-search"></i></button>
             </label>
-            <div class="serach-result">
+            <div class="serach-result" >
                 <ul>
-                    <li>hghghgfh</li>
-                    <li>hghghgfh</li>
-                    <li>hghghgfh</li>
-                    <li>hghghgfh</li>
-                    <li>hghghgfh</li>
+                    <li id="serach-result"></li>
+                    
                 </ul>
             </div>
         </div>
@@ -229,6 +226,30 @@
             </p>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+$("#search-live").on('keyup',function(){
+     $value=$(this).val();
+     if($value!="")
+     {
+     $.ajax({
+         url:'{{URL::to("~/product/search")}}',
+          type:"GET",
+          data:{'search':$value},
+          success:function(data)
+          {
+              $('#serach-result').html(data);
+          }
+        });
+     }
+     else
+     {
+         $('#serach-result').html('');
+     }
+
+  });
+
+    </script>
 
 
 

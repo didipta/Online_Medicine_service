@@ -13,6 +13,7 @@
 
     var quantity = 0;
     var price = 0;
+    var id = 0;
 }
 
 @if (ViewBag.count != 0)
@@ -23,14 +24,16 @@
             {
                 <div class="add-item">
                     <img src="~/Content/img/@item.p_img" />
-                    <h3 style="width:400px;">@item.P_name</h3>
-                    <p style="width:100px; margin-left: 60px;">Quantity-@item.P_O_quantity</p>
-                    <h5 style="width: 100px; margin-left: 50px; font-size: .9rem;">price-@item.P_tprice</h5>
-                    <a href="/Orders/cartitemdelete/@item.Id"><button class="btn" style="width: 120px; margin-left: 40px;">Delete</button></a>
-                </div>
+                    <a href="/Product/Addtocart/@item.P_id">
+                        <h3 style="width:400px;">@item.P_name</h3></a>
+                        <p style="width:100px; margin-left: 60px;">Quantity-@item.P_O_quantity</p>
+                        <h5 style="width: 100px; margin-left: 50px; font-size: .9rem;">price-@item.P_tprice</h5>
+                        <a href="/Orders/cartitemdelete/@item.Id"><button class="btn" style="width: 120px; margin-left: 40px;">Delete</button></a>
+</div>
 
                 quantity += @item.P_O_quantity;
                 price += Int32.Parse(@item.P_tprice);
+                id += @item.Id;
             }
 
 
@@ -51,7 +54,7 @@
             </div>
 
             <div class="detalis_1">
-                <h4 style="width: 300px;">Delivery </h4>
+                <h4 style="width: 300px;">Delivery Charge </h4>
                 <p style="width: 200px; margin-left: 200px; font-size: .9rem;">40</p>
             </div>
             <hr style="width: 100%; height:1px; background-color: rgba(196, 196, 196, 0.315); border: none;">
@@ -59,7 +62,7 @@
                 <h4 style="width: 300px;">Total Price </h4>
                 <p style="width: 200px; margin-left: 200px; font-size: .9rem;">@(price+40)</p>
             </div>
-            <button class="btn" style="background-color:forestgreen;">Checkout</button>
+            <button class="btn" style="background-color:forestgreen;" onclick="checkclick()">Checkout</button>
         </div>
     </div>
 
@@ -70,3 +73,61 @@ else
         <h1>No product has been stored so far.</h1>
     </div>
 }
+
+
+<div class="payment" id="payment">
+    <div class="cancel" onclick="backclick()">
+        <i class="fas fa-times" ></i>
+    </div>
+    
+    <div class="title-pay">
+        <h3>Payment Type </h3>
+        <hr style="width: 100%; height:1px; background-color: rgb(255 255 255); border: none;">
+        <div class="pay-type">
+            <img src="~/Content/img/bkash.png" onclick="bkashclick()" />
+            <img src="~/Content/img/cash.png" onclick="cardclick()" />
+            <img src="~/Content/img/card.png" onclick="cashclick()" />
+        </div>
+        <hr style="width: 100%; height:1px; background-color: rgb(255 255 255); border: none;">
+        <div class="confirm">
+
+            <form action="/Orders/Payment" class="paymentform" id="bkashback" method="post">
+                <input type="hidden" name="orderid" value="#order@(id*100+101011000)">
+                <input type="hidden" name="totaleprice" value="@price">
+                <input type="hidden" name="Paymenttype" value="Bkash">
+                <input type="hidden" name="totalorder" value="@quantity">
+                <h4>Bkash in Payment</h4>
+                <input type="text" name="phonenu" id="" placeholder="Phone number" required><br>
+                <input type="password" name="password" id="" placeholder="password" required>
+                <button class="btn">Confirm Order</button>
+            </form>
+        </div>
+        <div class="confirm">
+
+            <form action="/Orders/Payment" class="paymentform" id="cardback" method="post">
+                <input type="hidden" name="totalorder" value="@quantity">
+                <input type="hidden" name="orderid" value="#order@(id*100+101011000)">
+                <input type="hidden" name="totaleprice" value="@price">
+                <input type="hidden" name="Paymenttype" value="Card">
+
+                <h4>Card in Payment</h4>
+                <input type="text" name="phonenu" id="" placeholder="Card id" required><br>
+                <input type="password" name="password" id="" placeholder="password" required>
+                <button class="btn">Confirm Order</button>
+            </form>
+
+        </div>
+        <div class="confirm">
+
+            <form action="/Orders/Payment" class="paymentform" id="cashback" method="post">
+                <input type="hidden" name="totalorder" value="@quantity">
+                <input type="hidden" name="orderid" value="#order@(id*100+101011000)">
+                <input type="hidden" name="totaleprice" value="@price">
+                <input type="hidden" name="Paymenttype" value="Cash">
+
+                <h4>Cash in Payment</h4>
+                <button class="btn">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+</div>

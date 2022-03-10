@@ -127,5 +127,22 @@ namespace Online_Medicine_service.Controllers
             Project.SaveChanges();
             return RedirectToAction("Addtocart", new{ id=Request["product_id"] });
         }
+        public ActionResult search()
+        {
+             var output = "";
+            var c = Request["search"];
+            var Prodruct = (from P in Project.Products
+                            where P.P_name.Contains(c)
+                            select P).ToList();
+
+            foreach (var item in Prodruct)
+            {
+                var link = "/Product/ Addtocart /" + item.Id;
+                output.Contains("<a href='" + link + "'>" + item.P_name + "</a>");
+            }
+            return View(output);
         }
+
+     
+    }
 }

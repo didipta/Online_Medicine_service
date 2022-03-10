@@ -318,3 +318,79 @@
     top:5vw;
     
 }
+.payment {
+    width: 40%;
+    background-color: #fffffffa;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    transform: translate(-50%,-%50);
+    margin: 10px;
+    padding: 10px;
+    z-index: 100;
+    display: none;
+    box-shadow: 10px 10px 10px 10px rgba(75, 74, 74, 0.404);
+    border-radius:10px;
+}
+.title-pay {
+    font-size: 0.9rem;
+    margin: 5px;
+}
+.pay-type
+{
+    display:flex;
+}
+    .pay-type img {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: aliceblue;
+        box-shadow: 1px 1px 1px 1px rgba(75, 74, 74, 0.404);
+    }
+.confirm{
+    position:relative;
+    margin:10px;
+}
+    .confirm .paymentform {
+        width: 400px;
+        background-color:aliceblue;
+        box-shadow: 1px 1px 1px 1px rgba(75, 74, 74, 0.404);
+        padding: 10px;
+        margin: 10px;
+        margin-top: 30px;
+        border-radius: 10px;
+        display:none;
+    }
+
+        .confirm .paymentform h4 {
+            margin-left: 120px;
+            color: rgb(54, 54, 54);
+        }
+
+.paymentform input {
+    width: 300px;
+    height: 30px;
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: .8rem;
+    color: #333;
+    box-shadow: 1px 1px 1px 1px rgba(75, 74, 74, 0.404);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+}
+.cancel {
+    position: absolute;
+    right: 5%;
+    top: 0%;
+    font-size: 1.8rem;
+    color: rgba(75, 74, 74, 0.404);
+    cursor: pointer;
+}

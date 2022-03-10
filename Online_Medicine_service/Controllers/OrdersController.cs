@@ -58,5 +58,52 @@ namespace Online_Medicine_service.Controllers
             Project.SaveChanges();
             return RedirectToAction("Addtocart");
         }
+
+        public ActionResult Payment()
+        {
+            var username = Session["Usernmae"].ToString();
+            Entities Project = new Entities();
+            var uid = (from P in Project.Systemusers
+                             where P.U_username==username
+                       select P).FirstOrDefault();
+            var cartitem = (from c in Project.addtocarts
+                       where c.U_username == username
+                       select c).ToList();
+
+            myorder order = new myorder();
+            order.Oder_id = Request["orderid"];
+            order.totale_price = Request["totaleprice"];
+            order.Paymanttype = Request["Paymenttype"];
+            order.U_username = username;
+            order.User_id =uid.Id;
+            order.O_status= "Your Order is processing";
+            order.totale_iteam = Request["totalorder"];
+            Project.myorders.Add(order);
+            Project.SaveChanges();
+            foreach (var item in cartitem)
+            {
+                Orderdetail detail = new Orderdetail();
+                var productid = (from P in Project.Products
+                           where P.Id == item.P_id
+                           select P).FirstOrDefault();
+                productid.P_quantity =(productid.P_quantity - item.P_O_quantity);
+                Project.Entry(productid).CurrentValues.SetValues(productid);
+                detail.Order_id = order.Id;
+                detail.P_id = item.P_id;
+                detail.p_img = item.p_img;
+                detail.P_tprice = item.P_tprice;
+                detail.status = "Product id ordered";
+                detail.U_username = item.U_username;
+                detail.P_name = item.P_name;
+                detail.P_O_quantity = item.P_O_quantity;
+                Project.Orderdetails.Add(detail);
+                Project.addtocarts.Remove(item);
+                Project.SaveChanges();
+
+            }
+
+
+            return RedirectToAction("Addtocart");
+        }
     }
 }
