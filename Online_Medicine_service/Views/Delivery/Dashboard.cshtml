@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_deliverypage.cshtml";
+}
+
+<style>
+
+
+
+    table {
+        background-color: white;
+        margin: 10px;
+    }
+
+    tr {
+        box-shadow: 5px 5px 10px 5px rgba(141,141,141,0.548);
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+
+
+
+<div class="content" style="margin-left:350px;">
+    <p style=" color: blue; font-family: TechnicBold;font-size:37px;">Orders</p>
+    <table class="table table-bordered">
+        <tr>
+            <th>Order Id</th>
+            <th>User Id</th>
+            <th>Customer name</th>
+            <th>Total price</th>
+            <th>Payment type</th>
+            <th>Status</th>
+            <th>Total item</th>
+
+
+
+
+            <th></th>
+            <th></th>
+        </tr>
+
+
+
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.User_id</td>
+                <td>@s.U_username</td>
+                <td>@s.totale_price</td>
+                <td>@s.Paymanttype</td>
+                <td>@s.O_status </td>
+                <td>@s.totale_iteam</td>
+
+
+
+
+
+                @if (s.O_status.Trim().Equals("Delivered the product"))
+                {
+                    <td><a style="width:250px; background-color:forestgreen; padding:10px; text-align:center; border:none; margin:10px; color:white;" href="/Delivery/Process/@s.Id">Accept</a></td>
+                }
+                @if (s.O_status.Trim().Equals("Your Order is processing"))
+                {
+                    <td><a style="width:250px; background-color:forestgreen; padding:10px; text-align:center; border:none; margin:10px; color:azure;" href="/Delivery/Process/@s.Id">Delivered</a></td>
+                }
+
+                <td><a style="width:250px; background-color:red; padding:10px; text-align:center; border:none; margin:10px; color:azure;" href="/Delivery/Cancel/@s.Id">Cancel</a></td>
+                
+
+
+
+            </tr>
+        }
+    </table>
+</div>
+

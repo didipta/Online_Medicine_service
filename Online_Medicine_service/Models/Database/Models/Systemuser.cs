@@ -33,5 +33,6 @@ namespace Online_Medicine_service.Models.Database.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<myorder> myorders { get; set; }
+        public object ImageFile { get; internal set; }
     }
 }

@@ -1,0 +1,63 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Dashboard Menu</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/font-awesome.css")
+
+
+
+</head>
+<body>
+    <header style="margin-left:300px; height:80px;">
+        <ul>
+            <li style="display:inline-grid;margin: 0;padding-right: 3%;margin-left:10%;"><a href="" class="fa fa-search" style="font-size:25px;color:#f731c6; text-decoration:none;"> <input type="text" name="search" class="form-control" placeholder="Search" style="width:300px;height:20px;" /></a></li>
+            <li style="display:inline-grid;margin: 0;padding-right: 3%; margin-left:30%;"><a href="" class="fa fa-bell" style="font-size:25px;color:#f731c6; text-decoration:none;"></a></li>
+            <li style="display:inline-grid;margin: 0;padding-right: 3%;"><a href="" class="fa fa-user" style="font-size:25px;color:#f731c6; text-decoration:none;"></a></li>
+        </ul>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <p style="margin: 0px;margin-left: 28px;font-weight: bold;color: white;margin-bottom: 30px;"><span style="color: #f7403b;"> Med</span> Life</p>
+        <div class="profile">
+            <div class="avatar-img">
+                <img src="" />
+
+
+
+            </div>
+
+
+
+            <div class="name-pos">
+                <h2 style="font-size:25px;
+color: white;padding: 0px 8px 0px 32px;">
+                    Welcome
+                </h2>
+                <h3 style="font-size: 25px;
+color: orangered;padding: 0px 8px 15px 32px; ">
+                    @Session["U_name"]
+                </h3>
+            </div>
+        </div>
+        <a href="/Delivery/Dashboard"><i class="fa fa-list"></i> &nbsp;&nbsp;Dashboard</a>
+        <a href="/Delivery/DeliverInfo"><i class="fa fa-list"></i> &nbsp;&nbsp;Deliverinfo</a>
+        <a href="/Delivery/Profilee"><i class="fa fa-user"></i> &nbsp;&nbsp;Profile</a>
+        <a href="/index/Logout"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;log Out</a>
+
+
+
+    </div>
+
+
+
+</body>
+</html>

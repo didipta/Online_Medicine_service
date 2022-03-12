@@ -61,6 +61,24 @@ namespace Online_Medicine_service.Controllers
             return View();
         }
         [HttpPost]
+        public ActionResult Profileedit()
+        {
+            var username = Session["Usernmae"].ToString();
+            var name = Request["name"];
+            var address = Request["address"];
+            var useer = (from u in Project.Systemusers
+                         where u.U_username == username
+                         select u).FirstOrDefault();
+            useer.U_name=name;
+            useer.U_address = address;
+            Project.Entry(useer).CurrentValues.SetValues(useer);
+            Project.SaveChanges();
+            return RedirectToAction("Profilepage");
+
+
+            return View();
+        }
+        [HttpPost]
         public ActionResult Profileimg()
         {
             if (Session["Usernmae"] != null)

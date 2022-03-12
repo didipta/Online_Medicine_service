@@ -50,7 +50,7 @@ namespace Online_Medicine_service.Controllers
                         
                         Session["Usernmae"] = data.U_username;
                         Session["Usertype"] = data.Usertype;
-                        return RedirectToAction("Dashboard", "Admin");
+                        return RedirectToAction("home", "AdminHome");
                     }
                     else if (data.Usertype == "Staff")
                     {
@@ -58,6 +58,14 @@ namespace Online_Medicine_service.Controllers
                         Session["Usernmae"] = data.U_username;
                         Session["Usertype"] = data.Usertype;
                         return RedirectToAction("Index", "Store");
+                    }
+                    
+                    else if (data.Usertype == "Deliveryman")
+                    {
+
+                        Session["Usernmae"] = data.U_username;
+                        Session["Usertype"] = data.Usertype;
+                        return RedirectToAction("Dashboard", "Delivery");
                     }
 
                 }

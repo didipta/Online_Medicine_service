@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Auth\customeraccess.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\indexController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Models\Database\Models\deliverinfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Database\Models\deliverinfoModel.cs" />
     <Compile Include="Models\Database\Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +284,21 @@
     <Content Include="Views\Store\Profilee.cshtml" />
     <Content Include="Views\User\Homepage.cshtml" />
     <Content Include="Views\User\Profilepage.cshtml" />
+    <Content Include="Views\AdminHome\home.cshtml" />
+    <Content Include="Views\AdminHome\Profile.cshtml" />
+    <Content Include="Views\product\AddProduct.cshtml" />
+    <Content Include="Views\AdminHome\ProductList.cshtml" />
+    <Content Include="Views\AdminHome\ProductTable.cshtml" />
+    <Content Include="Views\AdminHome\EditProduct.cshtml" />
+    <Content Include="Views\AdminHome\user.cshtml" />
+    <Content Include="Views\AdminHome\AddUser.cshtml" />
+    <Content Include="Views\AdminHome\CustomerList.cshtml" />
+    <Content Include="Views\AdminHome\SellerList.cshtml" />
+    <Content Include="Views\AdminHome\DeliveryManList.cshtml" />
+    <Content Include="Views\Shared\_deliverypage.cshtml" />
+    <Content Include="Views\Delivery\Deliverinfo.cshtml" />
+    <Content Include="Views\Delivery\Dashboard.cshtml" />
+    <Content Include="Views\Delivery\Profilee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

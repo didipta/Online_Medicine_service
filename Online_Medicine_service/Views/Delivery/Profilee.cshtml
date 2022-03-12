@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Profilee";
+    Layout = "~/Views/Shared/_deliverypage.cshtml";
+}
+
+<style>
+    .content label {
+        margin-left: 5%;
+        font-size: 30px;
+        font-family: TechnicBold;
+        color: darkblue;
+    }
+
+
+
+    .content input {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        font-size: 22px;
+        padding-left: 30px;
+    }
+</style>
+
+
+
+
+<div class="content" style="margin-left:300px;">
+    <p style=" font-size:44px; color:blue ; margin-left: 65px; font-family:TechnicBold">About</p>
+    <label>Name: </label><input type="text" name="U_name" value="@Model.U_name" class="form-control" style="width:35%;height:28px;" placeholder="Name" /><br /><br />
+    <label>Phone no: </label><input type="text" name="U_phone" value="@Model.U_phone" class="form-control" style="width:35%;height:28px;" placeholder="Phone no" /><br /><br />
+    <label>Address: </label><input type="text" name="U_address" value="@Model.U_address" class="form-control" style="width:35%;height:28px;" placeholder="Address" /><br /><br />
+    <label>User name: </label> <input type="text" name="U_username" value="@Model.U_username" class="form-control" style="width:35%;height:28px;" placeholder="Username" /><br /><br />
+    <label>Email: </label><input type="text" name="U_email" value="@Model.U_email" class="form-control" style="width:35%;height:28px;" placeholder="Email" /><br /><br />
+    <label>Password: </label> <input type="text" name="U_password" value="@Model.U_password" class="form-control" style="width:35%;height:28px;" placeholder="Password" /><br /><br />
+    <label>User type:</label> <input type="text" name="Usertype" value="@Model.Usertype" class="form-control" style="width:35%;height:28px;" placeholder="Usertype" /><br /><br />
+    <label>User photo:</label><input type="text" name="U_profileimg" value="@Model.U_profileimg" class="form-control" style="width:35%;height:28px;" placeholder="image" /><br /><br />
+    <label>Pharmacy name:</label><input type="text" name="pharmacyname" value="@Model.pharmacyname" class="form-control" style="width:35%;height:28px;" placeholder="pharmacy name" /><br /><br />
+
+
+
+
+
+
+
+</div>
+

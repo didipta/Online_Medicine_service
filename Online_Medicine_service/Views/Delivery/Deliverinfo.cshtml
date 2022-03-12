@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Deliverinfo";
+    Layout = "~/Views/Shared/_deliverypage.cshtml";
+}
+
+<style>
+    table {
+        background-color: white;
+        margin: 10px;
+    }
+
+    tr {
+        box-shadow: 5px 5px 10px 5px rgba(141,141,141,0.548);
+        width: 220px;
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+<div class="content" style="margin-left:300px;">
+
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Order Id</th>
+            <th>Deliverman name</th>
+            <th>Delivery Status</th>
+            <th>Time</th>
+
+
+
+
+
+            <th></th>
+            <th></th>
+        </tr>
+
+
+
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.O_id</td>
+                <td>@s.D_username</td>
+                <td>@s.D_status</td>
+                <td>@s.D_time </td>
+
+
+
+
+            </tr>
+        }
+    </table>
+
+
+
+</div>
+
