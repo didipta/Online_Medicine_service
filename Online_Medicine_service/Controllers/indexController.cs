@@ -35,11 +35,31 @@ namespace Online_Medicine_service.Controllers
                             where u.U_username.Equals(sm.user_name) &&
                             u.U_password.Equals(sm.password_s)
                             select u).FirstOrDefault();
+                
                 if (data != null)
                 {
-                    FormsAuthentication.SetAuthCookie(data.U_username, false);
-                    Session["Usernmae"] = data.U_username;
-                    return RedirectToAction("Homepage","User");
+                    if (data.Usertype== "Customer")
+                    {
+                        
+                        Session["Usernmae"] = data.U_username;
+                        Session["Usertype"] = data.Usertype;
+                        return RedirectToAction("Homepage", "User");
+                    }
+                    else if (data.Usertype == "Admin")
+                    {
+                        
+                        Session["Usernmae"] = data.U_username;
+                        Session["Usertype"] = data.Usertype;
+                        return RedirectToAction("Dashboard", "Admin");
+                    }
+                    else if (data.Usertype == "Staff")
+                    {
+                       
+                        Session["Usernmae"] = data.U_username;
+                        Session["Usertype"] = data.Usertype;
+                        return RedirectToAction("Index", "Store");
+                    }
+
                 }
 
             }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9cb568b2e9f145ca940d0de67c7b2ea1" Name="Diagram1">
+      <Diagram DiagramId="0f2a70470d9346199c2179c8a1395af2" Name="Diagram1">
         <EntityTypeShape EntityType="Model.addtocart" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Category" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.deliverinfo" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Rating" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.returndeteli" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Returnproduct" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Returnproduct" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Systemuser" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_addtocart_Products" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Products_Categories" ManuallyRouted="false" />

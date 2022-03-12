@@ -50,3 +50,53 @@
     margin:10px;
     font-size:0.8rem;
 }
+.myordes
+{
+    position:relative;
+    top:4vw;
+    right:5vw;
+    text-align:center;
+
+}
+.order_deteils {
+    display: flex;
+    margin: 10px;
+    margin-left: 100px;
+    background-color: #ffffff;
+    box-shadow: 10px 5px 10px 10px rgba(216, 211, 211, 0.548);
+    border-radius:5px;
+}
+.order_deteils h3
+{
+    width:300px;
+    margin-top:20px;
+}
+    .order_deteils p {
+        width: 300px;
+        margin-top: 20px;
+    }
+.details-return {
+    width:500px;
+    text-align:center;
+    position: relative;
+    top: 5vw;
+    left:10vw;
+    border-radius:10px;
+    margin: 10px;
+    box-shadow: 10px 5px 10px 10px rgba(216, 211, 211, 0.548);
+    padding:10px;
+}
+.details-return textarea
+{
+    max-width:400px;
+    width:400px;
+    height:150px;
+    outline:none;
+    overflow:hidden;
+    border:none;
+    background-color:rgba(231, 238, 248, 0.566);
+    resize:none;
+    padding:5px;
+
+}
+    

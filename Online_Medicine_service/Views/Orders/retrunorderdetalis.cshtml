@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "retrunorderdetalis";
+    Layout = "~/Views/Shared/_productpage.cshtml";
+}
+
+<div class="heading_p_page">
+    <span>
+        <a href="/User/Homepage">Home </a><a href="/Orders/retrunorder">/Return orders </a><a href="#">/Return orders detailes </a>
+    </span>
+</div>
+<div class="addtocart" style="width:800px;">
+   
+        <div class="add-item">
+            
+            <a href="/Product/Addtocart/@Model.p_id">
+                <h3 style="width:400px;">@Model.p_name</h3>
+            </a>
+            <p style="width:130px; margin-left: 60px;">Quantity-@Model.p_quantity</p>
+            <h5 style="width: 100px; margin-left: 50px; font-size: .9rem;">price-@Model.p_price</h5>
+            
+
+
+
+        </div>
+

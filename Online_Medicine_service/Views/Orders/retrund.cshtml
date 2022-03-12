@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "retrund";
+    Layout = "~/Views/Shared/_productpage.cshtml";
+}
+
+<div class="heading_p_page">
+    <span>
+        <a href="/User/Homepage">Home </a><a href="#">/All orders </a>
+    </span>
+</div>
+<div class="addtocart" style="width:1200px;">
+    
+    
+        <div class="add-item">
+            <img src="~/Content/img/@Model.p_img" />
+            <a href="/Product/Addtocart/@Model.P_id">
+                <h3 style="width:400px;">@Model.P_name</h3>
+            </a>
+            <p style="width:130px; margin-left: 60px;">Quantity-@Model.P_O_quantity</p>
+            <p style="width:200px; margin-left: 60px; color:deeppink">@Model.status</p>
+            <h5 style="width: 100px; margin-left: 50px; font-size: .9rem;">price-@Model.P_tprice</h5>
+
+        </div>
+    </div>
+
+    <div class="details-return">
+        <form action="/Orders/retrunconfirm" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="hidden" name="returnid" value="#retu@(Model.Id*Model.P_id*Int32.Parse(Model.P_tprice)*Model.P_O_quantity+100000002)" />
+            <h4>Please write the reason why return the product</h4><br />
+            <textarea name="reason" required></textarea><br />
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+    

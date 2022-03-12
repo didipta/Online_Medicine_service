@@ -106,6 +106,7 @@
           <ScalarProperty Name="reason" ColumnName="reason" />
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="statuse" ColumnName="statuse" />
+          <ScalarProperty Name="username" ColumnName="username" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

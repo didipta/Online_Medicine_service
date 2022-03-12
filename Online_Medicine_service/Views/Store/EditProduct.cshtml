@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/_staffpage.cshtml";
+}
+
+<h2 style="margin-left:400px;">EditProduct</h2>
+<div style="margin-left:400px;">
+    <form action="/Store/EditProduct" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" class="form-control" style="width:35%;height:28px;" placeholder="Id" /><br /><br />
+        <input type="text" name="P_name" value="@Model.P_name" class="form-control" placeholder="Name" /><br /><br />
+
+
+
+        <input type="text" name="P_price" value="@Model.P_price" class="form-control" placeholder="Price" /><br /><br />
+
+
+
+        <select name="P_categorie_id" value="@Model.P_categorie_id" class="form-control">
+            <option value="1"> COVID-1 Special </option>
+            <option value="2">Women Care </option>
+            <option value="3">Devices</option>
+            <option value="4">Herbal and homeopathy</option>
+            <option value="5">Baby and mom care</option>
+            <option value="6">Nutrition and drinks</option>
+            <option value="7">Personal Care</option>
+            <option value="8">Supplements and Vitamins</option>
+
+
+
+
+
+        </select><br /><br />
+        <input type="number" name="P_quantity" value="@Model.P_quantity" class="form-control" placeholder="Quantity" /><br /><br />
+        <input type="text" name="P_details" value="@Model.P_details" class="form-control" placeholder="Details" /><br /><br />
+        <input type="text" name="P_img" value="@Model.P_img" class="form-control" placeholder="image" /><br /><br />
+
+
+
+        <br />
+        <input type="submit" style="width:250px; background-color:green; padding:10px; color:aliceblue;font-weight:900; text-align:center; border:none;
+margin:10px" value="Edit" />
+
+
+
+    </form>
+
+
+
+</div>
+

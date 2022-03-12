@@ -9,19 +9,21 @@ using Online_Medicine_service.Models.Database.Models;
 using System.IO;
 using Online_Medicine_service.Models;
 
+
 namespace Online_Medicine_service.Controllers
 {
+   
     public class UserController : Controller
     {
         Entities Project = new Entities();
         // GET: User
-       // [Authorize]
+        // [Authorize]
         public ActionResult Homepage()
         {
             var config = new MapperConfiguration(
                 cfg =>
                 {
-                    cfg.CreateMap<Category,categorymodel>();
+                    cfg.CreateMap<Category, categorymodel>();
                     cfg.CreateMap<Product, productmodel>();
                 }
 
@@ -32,7 +34,7 @@ namespace Online_Medicine_service.Controllers
             ViewBag.categories = categories;
             var products = Project.Products.ToList();
             var product = mapper.Map<List<productmodel>>(products);
-            if (Session["Usernmae"]!= null)
+            if (Session["Usernmae"] != null)
             {
                 ViewBag.username = Session["Usernmae"].ToString();
             }
@@ -40,11 +42,10 @@ namespace Online_Medicine_service.Controllers
             {
                 ViewBag.username = " ";
             }
-           
+
             return View(product);
         }
         [HttpGet]
-        [Authorize]
         public ActionResult Profilepage()
         {
 

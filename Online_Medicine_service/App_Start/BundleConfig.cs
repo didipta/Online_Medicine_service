@@ -32,7 +32,8 @@ namespace Online_Medicine_service
                       "~/Content/addtocart.css",
                       "~/Content/profilepage.css",
                       "~/Content/orderpage.css",
-                      "~/Content/homepage.css"));
+                      "~/Content/homepage.css",
+                      "~/Content/site.css"));
         }
     }
 }

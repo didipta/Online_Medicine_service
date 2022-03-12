@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "myorders";
+    Layout = "~/Views/Shared/_productpage.cshtml";
+}
+<div class="heading_p_page">
+    <span>
+        <a href="/User/Homepage">Home </a><a href="#">/All orders </a>
+    </span>
+</div>
+<div class="myordes">
+    @if (ViewBag.count != 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="order_deteils">
+                <h3>@item.Oder_id</h3>
+                <p>price-@item.totale_price</p>
+                <p>item-@item.totale_iteam</p>
+                <p style="width:350px; color:deeppink; font-weight:900;">@item.O_status</p>
+                <a href="/Orders/orderdetails/@item.Id"><button class="btn">detailes</button></a>
+
+            </div>
+        }
+
+    }
+    else
+    {
+        <h1>No orders have been created  so far.</h1>
+    }
+
+</div>

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "retrunorder";
+    Layout = "~/Views/Shared/_productpage.cshtml";
+}
+
+<div class="heading_p_page">
+    <span>
+        <a href="/User/Homepage">Home </a><a href="#">/Return orders </a>
+    </span>
+</div>
+<div class="myordes">
+    @if (ViewBag.count != 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="order_deteils">
+                <h3>@item.return_id</h3>
+                <p style="width:500px;">@item.reason</p>
+                <p >@item.date</p>
+                <a href="/Orders/retrunorderdetalis/@item.id"><button class="btn">detailes</button></a>
+
+            </div>
+        }
+
+    }
+    else
+    {
+        <h1>No return have been created  so far.</h1>
+    }
+
+</div>

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "orderdetails";
+    Layout = "~/Views/Shared/_productpage.cshtml";
+}
+
+<div class="heading_p_page">
+    <span>
+        <a href="/User/Homepage">Home </a><a href="/Orders/myorders">/All orders </a><a href="#">/All orders deltails </a>
+    </span>
+</div>
+<div class="addtocart" style="width:1400px;">
+    @foreach (var item in Model)
+    {
+    <div class="add-item">
+        <img src="~/Content/img/@item.p_img" />
+        <a href="/Product/Addtocart/@item.P_id">
+            <h3 style="width:400px;">@item.P_name</h3>
+        </a>
+        <p style="width:130px; margin-left: 60px;">Quantity-@item.P_O_quantity</p>
+        <p style="width:200px; margin-left: 60px; color:deeppink">@item.status</p>
+        <h5 style="width: 100px; margin-left: 50px; font-size: .9rem;">price-@item.P_tprice</h5>
+        @if (ViewBag.detailes == "Delivered the product")
+        {
+            if (@item.status == "Retrun the product")
+            {
+                <p style="width:130px; margin-left: 60px; color:red; font-weight:900;">Already Retrun</p>
+            }
+            else
+            {
+    <a href="/Orders/retrund/@item.Id"><button class="btn" style="width: 120px; margin-left: 40px;">Returned</button></a>
+            }
+            
+        }
+
+    </div>
+    }
+
+
+
+
+</div>
+

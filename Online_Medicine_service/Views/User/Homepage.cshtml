@@ -1,4 +1,5 @@
 ﻿
+
 @{
     ViewBag.Title = "Homepage";
     Layout = "~/Views/Shared/_Userlayout.cshtml";
@@ -15,10 +16,10 @@
             <label>
                 <input type="text" name="search" id="search-live" class="search" placeholder="Search for anything of your mind...….."><button><i class="fas fa-search"></i></button>
             </label>
-            <div class="serach-result" >
+            <div class="serach-result">
                 <ul>
                     <li id="serach-result"></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -43,7 +44,8 @@
                 <li class="Catagories"><a href="#"><i class="fas fa-bars"></i> Catagories</a></li>
                 <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="/Orders/Addtocart"><i class="fas fa-server"></i> Cart Detalie</li>
-                <li><a href="#"><i class="fas fa-luggage-cart"></i> My orders</a></li>
+                <li><a href="/Orders/myorders"><i class="fas fa-luggage-cart"></i> My orders</a></li>
+                <li><a href="/Orders/retrunorder"><i class="fas fa-luggage-cart"></i> Return orders</a></li>
                 <li><a href="#"><i class="fas fa-people-carry"></i> Help</a></li>
                 <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
                 <li><a href="#"><i class="fas fa-address-book"></i> Contact Us</a></li>
@@ -139,129 +141,124 @@
 
 @foreach (var C in ViewBag.categories)
 {
-<div class="best_selles">
-    <h2>@C.name</h2>
-    <p>MOSTLY  BOUGHT</p>
-    <div class="iteam-slider">
-        @{ 
-            int count = 0;
-        }
-        @foreach (var item in Model)
-        {
-
-            if (C.Id== item.P_categorie_id)
+    <div class="best_selles">
+        <h2>@C.name</h2>
+        <p>MOSTLY  BOUGHT</p>
+        <div class="iteam-slider">
+            @{
+                int count = 0;
+            }
+            @foreach (var item in Model)
             {
-                if (++count == 8)
+
+                if (C.Id == item.P_categorie_id)
                 {
-                    break;
+                    if (++count == 8)
+                    {
+                        break;
+                    }
+                    <div class="best-item">
+                        <a href="/Product/Addtocart/@item.Id">
+                            <img src="~/Content/img/@item.P_img" alt="">
+                            <h3>@item.P_name</h3>
+                            <h2>৳-@item.P_price</h2>
+                        </a>
+                    </div>
+
                 }
-                <div class="best-item"><a href="/Product/Addtocart/@item.Id">
-                    <img src="~/Content/img/@item.P_img" alt="">
-                    <h3>@item.P_name</h3>
-                    <h2>৳-@item.P_price</h2>
-                </a></div>
+
 
             }
-
-
-        }
+        </div>
     </div>
+}
+
+
+<div class="detailes-service">
+    <h5>আরোগ্য থেকে অর্ডার কিভাবে করবেন?</h5>
+    <p>১. প্রেস্ক্রিপশনের ছবি আপলোড করুন অথবা ঔষধ সার্চ করে কিনুন।</p>
+    <p>২. আমাদের 'A Grade Pharmacist' আপনাকে ফোন করে অর্ডার কনফার্ম করবেন।</p>
+    <p>৩. ১৮-৪৮ ঘন্টার মধ্য আপনার ডেলিভারি বুঝে নিন।</p>
 </div>
-        }
-
-   
-    <div class="detailes-service">
-        <h5>আরোগ্য থেকে অর্ডার কিভাবে করবেন?</h5>
-        <p>১. প্রেস্ক্রিপশনের ছবি আপলোড করুন অথবা ঔষধ সার্চ করে কিনুন।</p>
-        <p>২. আমাদের 'A Grade Pharmacist' আপনাকে ফোন করে অর্ডার কনফার্ম করবেন।</p>
-        <p>৩. ১৮-৪৮ ঘন্টার মধ্য আপনার ডেলিভারি বুঝে নিন।</p>
+<div class="footer">
+    <div class="emergency">
+        <img src="https://freepikpsd.com/file/2019/10/calling-girl-png-7-Transparent-Images.png" />
+        <div class="emergency-title">
+            <h5>Can’t find your desired service? Let us know 24/7 in 17321.</h5>
+            <button style="font-size:0.7rem;">Request Services</button>
+            <button><i class="fas fa-phone-alt"></i>  17321</button>
+        </div>
     </div>
-    <div class="footer">
-        <div class="emergency">
-            <img src="https://freepikpsd.com/file/2019/10/calling-girl-png-7-Transparent-Images.png" />
-            <div class="emergency-title">
-                <h5>Can’t find your desired service? Let us know 24/7 in 17321.</h5>
-                <button style="font-size:0.7rem;">Request Services</button>
-                <button><i class="fas fa-phone-alt"></i>  17321</button>
-            </div>
-        </div>
-        <div class="footer-info">
-            <div class="item">
-                <h4>CONTACT</h4>
-                <p>
-                    7321<br />
-                    info@company
-                    <b>Corporate Address:</b>
-                    House # 57, Road # 25, Block - A,
-                    Banani, Dhaka 1212
-                </p>
-            </div>
-            <div class="item">
-                <h4>INFORMATION</h4>
-                <p>Help</p>
-                <p>About Us</p>
-                <p>Terms of use</p>
-                <p>Privacy Policy</p>
-                <p>Return and Refund Policy</p>
-            </div>
-
-            <div class="item">
-                <h4>IUSEFUL LINKS</h4>
-                <p>FAQ</p>
-                <p>Account</p>
-                <p>Medicines</p>
-                <p>Special Offers</p>
-            </div>
-            <div class="item">
-                <h4>DOWNLOAD OUR APP</h4>
-                <p><img src="https://cdn6.arogga.com/img/google-play-badge.png" alt="arogga" /></p>
-                <p><img src="https://cdn6.arogga.com/img/apple-store-badge.png" alt="arogga" /></p>
-            </div>
-
-        </div>
-
-        <div class="copy-write">
+    <div class="footer-info">
+        <div class="item">
+            <h4>CONTACT</h4>
             <p>
-                © @DateTime.Now.Year Medlife Limited. All rights reserved.
+                7321<br />
+                info@company
+                <b>Corporate Address:</b>
+                House # 57, Road # 25, Block - A,
+                Banani, Dhaka 1212
             </p>
         </div>
+        <div class="item">
+            <h4>INFORMATION</h4>
+            <p>Help</p>
+            <p>About Us</p>
+            <p>Terms of use</p>
+            <p>Privacy Policy</p>
+            <p>Return and Refund Policy</p>
+        </div>
+
+        <div class="item">
+            <h4>IUSEFUL LINKS</h4>
+            <p>FAQ</p>
+            <p>Account</p>
+            <p>Medicines</p>
+            <p>Special Offers</p>
+        </div>
+        <div class="item">
+            <h4>DOWNLOAD OUR APP</h4>
+            <p><img src="https://cdn6.arogga.com/img/google-play-badge.png" alt="arogga" /></p>
+            <p><img src="https://cdn6.arogga.com/img/apple-store-badge.png" alt="arogga" /></p>
+        </div>
+
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-$("#search-live").on('keyup',function(){
-     $value=$(this).val();
-     if($value!="")
-     {
-     $.ajax({
-         url:'{{URL::to("~/product/search")}}',
-          type:"GET",
-          data:{'search':$value},
-          success:function(data)
-          {
-              $('#serach-result').html(data);
-          }
-        });
-     }
-     else
-     {
-         $('#serach-result').html('');
-     }
 
-  });
-
-    </script>
+    <div class="copy-write">
+        <p>
+            © @DateTime.Now.Year Medlife Limited. All rights reserved.
+        </p>
+    </div>
+</div>
 
 
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript">
+      $("#search-live").on('keyup', function () {
 
+          $value = $(this).val();
 
+   if($value!="")
+   {
 
+       $.ajax({
+       url:'{{URL::to("/product/search")}}',
+        type:"GET",
+        data:{'search':$value},
+        success:function(data)
+        {
+            $('#serach-result').html(data);
+            alert("hadbhdab");
+        }
+      });
+   }
+   else
+   {
+       $('#serach-result').html('');
 
+   }
 
+});
 
-
-
-
-
-
-
+  </script>-->

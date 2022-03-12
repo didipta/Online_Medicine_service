@@ -25,6 +25,7 @@ namespace Online_Medicine_service.Models.Database.Models
         public string reason { get; set; }
         public System.DateTime date { get; set; }
         public string statuse { get; set; }
+        public string username { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<returndeteli> returndetelis { get; set; }

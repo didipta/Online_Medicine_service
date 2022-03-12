@@ -1,0 +1,65 @@
+﻿@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #112b73;
+    transition: 0.5s;
+    padding-top: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+    .sidenav a {
+        padding: 15px 8px 15px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+
+
+        .sidenav a:hover {
+            color: white;
+            background-color: dimgrey;
+        }
+
+
+
+.sidenav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 20px;
+}
+
+    .sidenav .avatar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+
+
+        .sidenav .avatar .avatar-img {
+            margin-right: 10px;
+        }
+
+
+
+.info-card {
+    height: 100%;
+    width: 50px;
+    margin-left: 300px;
+}
+
+.card-detail {
+    color: green;
+}

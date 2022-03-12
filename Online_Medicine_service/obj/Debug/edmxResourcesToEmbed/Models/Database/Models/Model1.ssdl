@@ -93,11 +93,12 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="return_id" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="reason" Type="text" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
     <Property Name="statuse" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Systemusers">
     <Key>

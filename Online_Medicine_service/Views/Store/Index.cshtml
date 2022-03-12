@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_staffpage.cshtml";
+}
+
+<style>
+    .card {
+        min-width: 550%;
+        height: 180px;
+        padding: 20px;
+        background: linear-gradient(to right, #334cf2,#00ff90);
+        border-radius: 10px;
+        color: #fff;
+    }
+
+
+
+        .card:nth-child(2) {
+            margin-left: 40%;
+            background: linear-gradient( to right,#334cf2,pink);
+        }
+
+
+
+    .card-icon {
+        margin-bottom: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+    }
+
+
+
+    .card-detail {
+        font-size: 15px;
+        color: aliceblue;
+    }
+
+
+
+    .info-card {
+        display: flex;
+        align-items: center;
+    }
+
+
+
+    .main-content .main-table .title {
+        margin: 15px 0;
+    }
+
+
+
+    .main-content .pro_table {
+        display: grid;
+    }
+
+
+
+        .main-content .pro_table table thead tr td {
+            padding: 20px 0;
+            font-weight: bold;
+            color: #000;
+        }
+
+
+
+        .main-content .pro_table table tbody tr td {
+            padding: 15px 0;
+        }
+
+
+
+        .main-content .pro_table table tbody tr .btn {
+            padding: 7px 25px;
+            background: #4800ff;
+            display: inline-block;
+            color: #fff;
+        }
+</style>
+<div style="margin-left: 20px; background-color: ghostwhite;">
+    <div class="info-card">
+        <div class="card">
+            <div class="card-icon">
+                <span><i class="fa fa-industry"></i></span>
+            </div>
+            <div class="card-detail">
+                <h4>Total Types Of Products</h4>
+                <h2>@ViewBag.Count</h2>
+            </div>
+
+
+
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <span><i class="fa fa-money"></i></span>
+            </div>
+            <div class="card-detail">
+                <h4>Total Customers Who Returned Product</</h4>
+                <h2>@ViewBag.Countt </h2>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<div class="main-content" style="margin-left: 350px;">
+    <div class="main-table">
+        <h2>Ratings</h2>
+        <div class="pro_table">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Rating</td>
+                        <td>Review</td>
+                        <td>Product Id</td>
+                        <td>Username</td>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model)
+                    {
+                        <tr>
+                            <td>@st.id</td>
+                            <td>@st.rating1</td>
+                            <td>@st.Review</td>
+                            <td>@st.Product_id</td>
+                            <td>@st.username</td>
+
+
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using Online_Medicine_service.Models.Database.Models;
+using Online_Medicine_service.Auth;
 
 namespace Online_Medicine_service.Controllers
 {
@@ -40,9 +41,15 @@ namespace Online_Medicine_service.Controllers
 
         public ActionResult Addtocart(int id)
         {
+            var sta = "Product is delivered";
             var Prodruct = (from P in Project.Products
                             where P.Id == id
                             select P).FirstOrDefault();
+
+            var ordercount = (from P in Project.Orderdetails
+                            where P.P_name == Prodruct.P_name && P.status== sta
+                              select P).ToList();
+            ViewBag.ordercounts = ordercount.Count();
             var categori = (from C in Project.Categories
                             where C.Id == Prodruct.P_categorie_id
                             select C).FirstOrDefault();
@@ -111,7 +118,7 @@ namespace Online_Medicine_service.Controllers
             }
             return View(Prodruct);
         }
-        [Authorize]
+        [customeraccess]
         public ActionResult reviwerating()
         {
             Rating raingss = new Rating
@@ -127,22 +134,22 @@ namespace Online_Medicine_service.Controllers
             Project.SaveChanges();
             return RedirectToAction("Addtocart", new{ id=Request["product_id"] });
         }
-        public ActionResult search()
-        {
-             var output = "";
-            var c = Request["search"];
-            var Prodruct = (from P in Project.Products
-                            where P.P_name.Contains(c)
-                            select P).ToList();
+        /* public ActionResult search()
+         {
+              string output = " ";
+             var c = Request["search"];
+             var Prodruct = (from P in Project.Products
+                             where P.P_name.Contains("'%"+c+"%'")
+                             select P).ToList();
 
-            foreach (var item in Prodruct)
-            {
-                var link = "/Product/ Addtocart /" + item.Id;
-                output.Contains("<a href='" + link + "'>" + item.P_name + "</a>");
-            }
-            return View(output);
-        }
+             foreach (var item in Prodruct)
+             {
+                 var link = "/Product/ Addtocart /" + item.Id;
+                 output +="<a href='" + link + "'>" + item.P_name + "</a>";
+             }
+             return output;
+         }*/
 
-     
+
     }
 }

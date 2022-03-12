@@ -1,0 +1,32 @@
+﻿@model Online_Medicine_service.Models.Database.Models.Product
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = "~/Views/Shared/_staffpage.cshtml";
+}
+
+
+<div style="margin-left:500px;">
+    <p style=" font-size:15px; color:blue ; margin-left: 65px;">Add Products</p>
+    <form action="/Store/CreateProduct" method="post">
+        <input type="text" name="P_name" class="form-control" style="width:35%;height:35px;" placeholder="Name" /><br /><br />
+        @Html.ValidationMessageFor(model => model.P_name, "", new { @class = "text-danger" })<br /><br /> <input type="text" name="P_price" class="form-control" style="width:35%;height:28px;" placeholder="Price" /><br />
+        @Html.ValidationMessageFor(model => model.P_price, "", new { @class = "text-danger" })<br /><br /> <select name="P_categorie_id" class="form-control">
+            <option value="1"> COVID-1 Special </option>
+            <option value="2">Women Care </option>
+            <option value="3">Devices</option>
+            <option value="4">Herbal and homeopathy</option>
+            <option value="5">Baby and mom care</option>
+            <option value="6">Nutrition and drinks</option>
+            <option value="7">Personal Care</option>
+            <option value="8">Supplements and Vitamins</option>
+        </select><br /><br />
+        @Html.ValidationMessageFor(model => model.P_categorie_id, "", new { @class = "text-danger" })<br /><br /> <input type="number" name="P_quantity" class="form-control" style="width:35%;height:28px;" placeholder="Quantity" /><br />
+        @Html.ValidationMessageFor(model => model.P_quantity, "", new { @class = "text-danger" })<br /><br /> <input type="text" name="P_details" class="form-control" style="width:35%;height:28px;" placeholder="Details" /><br />
+        @Html.ValidationMessageFor(model => model.P_details, "", new { @class = "text-danger" })<br /><br /> <input type="text" name="P_img" class="form-control" style="width:35%;height:28px;" placeholder="image" /><br />
+        @Html.ValidationMessageFor(model => model.P_img, "", new { @class = "text-danger" })<br /><br /> <input type="submit" style="width:250px; background-color:green; padding:10px; color:aliceblue;font-weight:900; text-align:center; border:none;
+margin:10px" value="Create" />
+    </form>
+</div>
+
+
+
